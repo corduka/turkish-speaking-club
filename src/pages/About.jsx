@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { GraduationCap, Code, Globe } from 'lucide-react';
+import profil from "../assets/profil.jpeg";
 
 export default function About() {
   return (
@@ -7,7 +8,7 @@ export default function About() {
       <section className="max-w-5xl mx-auto px-6">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center text-center mb-20">
           <div className="w-32 h-32 bg-slate-200 rounded-full mb-8 overflow-hidden">
-             {/* Profil Fotoğrafın Buraya */}
+             {profil && <img src={profil} alt="Instructor" className="w-full h-full object-cover" />}
           </div>
           <h1 className="text-4xl font-bold mb-4">Merhaba, I'm your instructor.</h1>
           <p className="text-xl text-brand-primary font-medium italic">Combining analytical discipline with linguistic passion.</p>
