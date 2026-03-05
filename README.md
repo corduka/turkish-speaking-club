@@ -2,6 +2,8 @@
 
 Master Turkish through immersive conversation. A modern web platform for boutique group lessons and personalized coaching.
 
+
+
 ## 🚀 Overview
 
 **Turkish Speaking Club** is a specialized language learning platform designed to bridge the gap between "understanding" and "speaking." Built by a **professional language educator** and **Front-End Developer**, the project combines pedagogical expertise with a clean, high-performance user experience.
