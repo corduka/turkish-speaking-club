@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logo1 from "../assets/logo1.png";
+import logo2 from "../assets/logo2.png";
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -41,7 +43,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             className="text-xl font-extrabold tracking-tighter text-brand-primary"
           >
-            TURKISH<span className="text-slate-400 uppercase">SpeakingClub</span>
+            {logo1 && <img src={logo1} alt="logo" className="h-16 object-cover" />}
           </motion.div>
         </Link>
 
@@ -89,12 +91,12 @@ export default function Navbar() {
       exit={{ opacity: 0 }}
       // z-[999] ile her şeyin en üstüne çıkmasını sağlıyoruz. 
       // bg-white kullanarak arka planı tamamen kapatıyoruz (yazılar görünmez).
-      className="fixed inset-0 bg-white z-[999] md:hidden flex flex-col"
+      className="fixed inset-0 bg-white opacity-100 z-[999] md:hidden flex flex-col"
     >
       {/* Mobil Menü Header (Logo ve Kapatma Butonu) */}
-      <div className="h-20 px-6 flex items-center justify-between border-b border-slate-100">
+      <div className="bg-[#F8FAFC] h-20 px-6 flex items-center justify-between border-b border-slate-100">
         <div className="text-xl font-extrabold tracking-tighter text-brand-primary">
-          TURKISH<span className="text-slate-400 uppercase">SpeakingClub</span>
+          {logo2 && <img src={logo2} alt="logo" className="h-24 object-cover" />}
         </div>
         <button 
           onClick={() => setIsOpen(false)}
@@ -105,7 +107,7 @@ export default function Navbar() {
       </div>
 
       {/* Menü Linkleri */}
-      <div className="flex-1 flex flex-col items-center justify-center gap-6 px-10">
+      <div className="bg-[#F8FAFC] flex-1 flex flex-col items-center justify-center gap-6 px-10">
         {navItems.map((item, index) => (
           <motion.div
             key={item.name}
@@ -137,7 +139,7 @@ export default function Navbar() {
       </div>
 
       {/* Alt Bilgi */}
-      <div className="p-10 text-center text-slate-400 border-t border-slate-50">
+      <div className="bg-[#F8FAFC] opacity-100 p-10 text-center text-slate-400 border-t border-slate-50">
         <p className="text-sm font-medium">Join the club, start talking.</p>
         <p className="text-xs mt-1">info@turkishspeakingclub.com</p>
       </div>

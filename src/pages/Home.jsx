@@ -5,6 +5,34 @@ import { Check, X, ArrowRight, Minus, Plus } from 'lucide-react';
 import ContactSection from '../components/ContactSection';
 import deneme1 from "../assets/deneme-1.png";
 import profile2 from "../assets/profile2.jpg";
+import testimonial1 from "../assets/testimonial1-matthew.jpg";
+import testimonial2 from "../assets/testimonial2.jpg";
+import testimonial3 from "../assets/testimonial3.jpeg";
+import { MessageCircle, Users2, LineChart } from 'lucide-react';
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Matthew P.",
+    text: "Abdullah is a fantastic teacher. He's very engaging and meets you at your skill level while also challenging you to meet your goals. He approaches learning Turkish with a structured plan with measurable and achievable goals. I would highly recommend him!",
+    status: "Verified Review",
+    img: testimonial1 // Eğer her birinin farklı fotosu varsa buraya ekleyebilirsin
+  },
+  {
+    id: 2,
+    name: "Karina G.",
+    text: "The boutique group sessions are exactly what I needed. Abdullah explains the 'why' behind the language, not just the 'how'. It feels more like a club than a boring classroom. My confidence has skyrocketed!",
+    status: "Verified Review",
+    img: testimonial2
+  },
+  {
+    id: 3,
+    name: "Valentina R.",
+    text: "The classes are super clear and organized, which makes learning much more manageable. Something I love is that, in addition to Turkish, he also knows Spanish, and that adds a huge plus because he understands my doubts from another perspective and can explain them in a much clearer way for me. You can tell the dedication and passion for teaching he puts into each session, and that motivates me a lot to keep learning.",
+    status: "Verified Review",
+    img: testimonial3
+  }
+];
 
 
 // --- Alt Bileşen: FAQ Akordiyon ---
@@ -163,44 +191,65 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-16">Why This Club Is Different</h2>
           <div className="grid md:grid-cols-3 gap-16">
-            {[
-              { t: "Speaking > Grammar", d: "We prioritize actual usage over dry, isolated rules." },
-              { t: "Real Interaction", d: "Natural flow and real-world cultural context." },
-              { t: "Structured Feedback", d: "Analytical approach to track your linguistic progress." }
-            ].map((val, i) => (
-              <div key={i} className="text-center group">
-                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-primary/10 transition-colors">
-                  <Minus className="text-brand-primary" />
-                </div>
-                <h3 className="font-bold mb-3 text-lg">{val.t}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed max-w-[250px] mx-auto">{val.d}</p>
-              </div>
-            ))}
+{[
+  { 
+    t: "Speaking > Grammar", 
+    d: "We prioritize actual usage over dry, isolated rules.",
+    icon: <MessageCircle className="w-6 h-6 text-brand-primary group-hover:scale-110 transition-transform" />
+  },
+  { 
+    t: "Real Interaction", 
+    d: "Natural flow and real-world cultural context.",
+    icon: <Users2 className="w-6 h-6 text-brand-primary group-hover:scale-110 transition-transform" />
+  },
+  { 
+    t: "Structured Feedback", 
+    d: "Analytical approach to track your linguistic progress.",
+    icon: <LineChart className="w-6 h-6 text-brand-primary group-hover:scale-110 transition-transform" />
+  }
+].map((val, i) => (
+  <div key={i} className="text-center group">
+    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-primary/10 transition-all duration-300">
+      {val.icon}
+    </div>
+    <h3 className="font-bold mb-3 text-lg text-slate-800">{val.t}</h3>
+    <p className="text-slate-500 text-sm leading-relaxed max-w-[250px] mx-auto">{val.d}</p>
+  </div>
+))}
           </div>
         </div>
       </section>
 
-      {/* 7. TESTIMONIALS (Premium Card Design) */}
-      <section className="py-32 bg-brand-dark text-white rounded-[4rem] mx-4 mb-32 shadow-2xl shadow-indigo-900/20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="p-10 bg-white/5 border border-white/10 rounded-[2.5rem] backdrop-blur-md">
-                <p className="text-indigo-100 italic mb-8 leading-relaxed">
-                  "The logic-based approach completely changed how I see Turkish grammar. It finally clicked and I can speak with confidence now."
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-brand-secondary/40 rounded-full border border-brand-secondary/30" />
-                  <div>
-                    <span className="block font-bold">Turkish Learner</span>
-                    <span className="text-xs text-indigo-300 uppercase tracking-tighter">Verified Review</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+{/* 7. TESTIMONIALS (Premium Card Design) */}
+<section className="py-32 bg-brand-dark text-white rounded-[4rem] mx-4 mb-32 shadow-2xl shadow-indigo-900/20">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="grid md:grid-cols-3 gap-8">
+      {/* 2. Map ile dönüyoruz */}
+      {testimonials.map((item) => (
+        <div key={item.id} className="p-10 bg-white/5 border border-white/10 rounded-[2.5rem] backdrop-blur-md flex flex-col justify-between">
+          <p className="text-indigo-100 italic mb-8 leading-relaxed">
+            "{item.text}"
+          </p>
+          <div className="flex items-center gap-4">
+            {item.img && (
+              <img 
+                src={item.img} 
+                alt={`${item.name} - Testimonial`} // SEO için anlamlı alt text
+                className="w-10 h-10 rounded-full object-cover border border-brand-secondary/30" 
+              />
+            )}
+            <div>
+              <span className="block font-bold">{item.name}</span>
+              <span className="text-xs text-indigo-300 uppercase tracking-tighter">
+                {item.status}
+              </span>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* 8. MEMBERSHIP SNAPSHOT */}
       <section className="py-24">
