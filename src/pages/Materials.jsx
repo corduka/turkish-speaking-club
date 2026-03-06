@@ -110,6 +110,35 @@ export default function Materials() {
         ))}
       </section>
 
+      {/* Spotify Playlist Section */}
+<section className="max-w-7xl mx-auto px-6 mt-16">
+  <motion.div 
+    whileHover={{ scale: 1.01 }}
+    className="bg-gradient-to-r from-[#1DB954]/10 to-transparent border border-[#1DB954]/20 rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8"
+  >
+    <div className="flex items-center gap-6">
+      <div className="w-20 h-20 bg-[#1DB954] rounded-2xl flex items-center justify-center shadow-lg shadow-[#1DB954]/20">
+        <svg viewBox="0 0 24 24" width="40" height="40" fill="white">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.491 17.306c-.215.353-.674.463-1.026.249-2.846-1.738-6.429-2.13-10.648-1.167-.404.093-.811-.161-.904-.565-.094-.403.161-.81.565-.904 4.614-1.054 8.566-.607 11.765 1.348.351.214.462.674.248 1.039zm1.465-3.264c-.269.439-.844.579-1.282.31-3.259-1.999-8.228-2.583-12.083-1.412-.494.15-1.019-.129-1.168-.623-.15-.494.129-1.02.623-1.168 4.412-1.339 9.904-.686 13.62 1.597.438.27.579.844.31 1.282zm.128-3.411c-.323.53-1.014.697-1.544.375-3.808-2.261-10.091-2.469-13.708-1.371-.606.184-1.25-.164-1.434-.77-.184-.606.164-1.25.77-1.434 4.298-1.305 11.233-1.055 15.655 1.571.53.322.697 1.014.375 1.544z"/>
+        </svg>
+      </div>
+      <div className="text-left">
+        <h3 className="text-2xl font-bold text-slate-800">Turkish Learning Vibe</h3>
+        <p className="text-slate-500">Carefully curated Turkish songs to improve your listening skills.</p>
+      </div>
+    </div>
+    
+    <a 
+      href="https://open.spotify.com/playlist/7icpTHIIScVUmxJkHHFdXa?si=789bb18becfe4ce4" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="bg-[#1DB954] text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-3 hover:bg-[#1ed760] transition-all hover:shadow-xl hover:shadow-[#1DB954]/20 active:scale-95 whitespace-nowrap"
+    >
+      Listen to our official playlist
+    </a>
+  </motion.div>
+</section>
+
       {/* Interactive Games Teaser */}
       <section className="max-w-7xl mx-auto px-6 mt-24">
         <motion.div 
