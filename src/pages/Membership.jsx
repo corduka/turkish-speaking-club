@@ -1,122 +1,110 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Star, Crown, Zap } from 'lucide-react';
+import { Check, Zap, Star, Crown } from 'lucide-react';
 
 const plans = [
   {
-    name: 'Club Member',
-    subtitle: 'Perfect for consistent practice',
-    price: '99',
-    period: '/month',
-    features: [
-      '8 Group Sessions per month',
-      'Max 5 students per group',
-      'Weekly curated materials',
-      'Access to speaking community',
-      'Progress tracking'
-    ],
-    buttonText: 'Join the Club',
-    icon: <Star className="w-6 h-6 text-brand-primary" />,
-    recommended: true
+    name: "Starter Club",
+    price: "49",
+    description: "Perfect for building consistency and overcoming speaking anxiety.",
+    features: ["2 Group Sessions / week", "Access to Materials Hub", "Weekly Checklist PDF", "Community Chat Access"],
+    icon: <Zap className="w-6 h-6" />,
+    popular: false,
   },
   {
-    name: 'Private 1:1',
-    subtitle: 'Tailored for rapid progress',
-    price: '240',
-    period: '/8 sessions',
-    features: [
-      'Everything in Club Member',
-      '100% personalized curriculum',
-      'Flexible scheduling',
-      'In-depth grammar & accent work',
-      'Direct WhatsApp support'
-    ],
-    buttonText: 'Start Private Coaching',
-    icon: <Crown className="w-6 h-6 text-amber-500" />,
-    recommended: false
+    name: "Pro Speaker",
+    price: "89",
+    description: "The most efficient way to reach fluency with intensive practice.",
+    features: ["Unlimited Group Sessions", "1-on-1 Monthly Coaching", "Personalized Mistake Log", "Priority Support", "All Premium Materials"],
+    icon: <Star className="w-6 h-6" />,
+    popular: true,
+  },
+  {
+    name: "Elite 1:1",
+    price: "149",
+    description: "Fully customized experience for rapid professional growth.",
+    features: ["Exclusive 1-on-1 Sessions", "Custom Curriculum", "24/7 WhatsApp Support", "Business Turkish Focus", "Lifetime Material Access"],
+    icon: <Crown className="w-6 h-6" />,
+    popular: false,
   }
 ];
 
 export default function Membership() {
   return (
-    <div className="pt-32 pb-20 min-h-screen">
-      <section className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold mb-6"
-          >
-            Simple, Transparent <span className="text-brand-primary">Pricing</span>
-          </motion.h2>
-          <p className="text-slate-600 max-w-xl mx-auto text-lg">
-            Choose the path that fits your learning style. No hidden fees, cancel anytime.
+    <section className="py-24 bg-slate-50/50">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Choose Your <span className="text-brand-primary">Growth Path</span>
+          </h2>
+          <p className="mt-4 text-slate-500 text-lg max-w-2xl mx-auto">
+            Transparent pricing with no hidden fees. Join the club and start speaking Turkish with confidence.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
-              initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className={`relative p-10 rounded-[2.5rem] border ${
-                plan.recommended 
-                ? 'border-brand-primary shadow-2xl shadow-brand-primary/10 bg-white' 
-                : 'border-slate-200 bg-slate-50/50'
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -10 }}
+              className={`relative p-8 rounded-[3rem] transition-all duration-500 ${
+                plan.popular 
+                ? 'bg-slate-900 text-white shadow-2xl shadow-blue-900/20 scale-105 z-10' 
+                : 'bg-white text-slate-800 border border-slate-100 shadow-xl shadow-slate-200/50'
               }`}
             >
-              {plan.recommended && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-primary text-white px-4 py-1 rounded-full text-sm font-bold flex items-center gap-1">
-                  <Zap className="w-4 h-4 fill-current" /> Most Popular
+              {plan.popular && (
+                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-brand-primary text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg animate-pulse">
+                  Most Popular
                 </div>
               )}
 
-              <div className="flex items-center gap-3 mb-6">
-                {plan.icon}
-                <h3 className="text-2xl font-bold">{plan.name}</h3>
-              </div>
-              
-              <p className="text-slate-500 mb-8">{plan.subtitle}</p>
-
-              <div className="flex items-baseline gap-1 mb-10">
-                <span className="text-5xl font-extrabold">${plan.price}</span>
-                <span className="text-slate-400 font-medium">{plan.period}</span>
-              </div>
-
-              <ul className="space-y-5 mb-12">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <div className="mt-1 bg-brand-secondary/20 p-0.5 rounded-full">
-                      <Check className="w-4 h-4 text-brand-secondary" />
-                    </div>
-                    <span className="text-slate-700 font-medium">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <button className={`w-full py-4 rounded-2xl font-bold text-lg transition-all ${
-                plan.recommended 
-                ? 'bg-brand-primary text-white shadow-lg shadow-brand-primary/30 hover:scale-[1.02]' 
-                : 'bg-white border-2 border-slate-200 text-brand-dark hover:border-brand-primary'
+              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 ${
+                plan.popular ? 'bg-white/10 text-brand-primary' : 'bg-brand-primary/10 text-brand-primary'
               }`}>
-                {plan.buttonText}
+                {plan.icon}
+              </div>
+
+              <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+              <div className="flex items-baseline justify-center gap-1 mb-4">
+                <span className="text-4xl font-extrabold">${plan.price}</span>
+                <span className={plan.popular ? 'text-slate-400' : 'text-slate-500'}>/month</span>
+              </div>
+              <p className={`text-sm mb-8 leading-relaxed ${plan.popular ? 'text-slate-300' : 'text-slate-500'}`}>
+                {plan.description}
+              </p>
+
+              <div className="space-y-4 mb-10 text-left">
+                {plan.features.map((feature) => (
+                  <div key={feature} className="flex items-start gap-3">
+                    <div className={`mt-1 p-0.5 rounded-full ${plan.popular ? 'bg-brand-primary text-white' : 'bg-green-100 text-green-600'}`}>
+                      <Check className="w-3.5 h-3.5" />
+                    </div>
+                    <span className="text-sm font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button className={`w-full py-4 rounded-2xl font-bold transition-all active:scale-95 ${
+                plan.popular 
+                ? 'bg-brand-primary text-white hover:bg-white hover:text-slate-900 shadow-lg shadow-brand-primary/20' 
+                : 'bg-slate-100 text-slate-800 hover:bg-slate-900 hover:text-white'
+              }`}>
+                Get Started Now
               </button>
             </motion.div>
           ))}
         </div>
-
-        {/* Trust Note */}
-        <motion.p 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="text-center mt-12 text-slate-400 text-sm"
-        >
-          All plans include a 14-day money-back guarantee. Questions? <a href="/contact" className="text-brand-primary underline underline-offset-4 font-medium">Chat with us</a>
-        </motion.p>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

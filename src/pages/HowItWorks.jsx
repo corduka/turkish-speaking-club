@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { UserPlus, Calendar, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { useForm } from '../context/FormContext'; // Hook'u ekle
 
 const steps = [
   {
@@ -23,6 +24,7 @@ const steps = [
 ];
 
 export default function HowItWorks() {
+  const { openForm } = useForm(); // Fonksiyonu tanımla
   return (
     <div className="pt-32 pb-20 min-h-screen">
       <section className="max-w-7xl mx-auto px-6">
@@ -90,7 +92,9 @@ export default function HowItWorks() {
           </div>
           <div className="flex-1 text-center">
             <p className="text-slate-400 mb-8 italic">"The best way to learn is to make mistakes in a safe place."</p>
-            <button className="bg-brand-secondary text-brand-dark px-10 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform">
+            <button 
+              onClick={() => openForm('how_it_works_page')} // Hangi sayfadan açıldığını belirten bir parametre gönderebilirsin
+              className="bg-brand-secondary text-brand-dark px-10 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform">
               Book Your Free Trial
             </button>
           </div>

@@ -1,17 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import TermsPrivacy from './pages/TermsPrivacy';
-import FAQ from './pages/FAQ';
+import { FormProvider } from './context/FormContext';
+import FormModal from './components/FormModal'; // Birazdan oluşturacağız
 
 // Sayfalar
+import Home from './pages/Home';
 import HowItWorks from './pages/HowItWorks';
 import Membership from './pages/Membership';
 import Private from './pages/Private';
 import Materials from './pages/Materials';
 import About from './pages/About';
+import NotFound from './pages/NotFound';
+import TermsPrivacy from './pages/TermsPrivacy';
+import FAQ from './pages/FAQ';
 
 // Blog Bileşenleri
 import BlogList from './pages/blog/BlogList';
@@ -19,6 +21,7 @@ import BlogDetail from './pages/blog/BlogDetail';
 
 function App() {
   return (
+    <FormProvider>
     <Router>
       <div className="flex flex-col min-h-screen">
         {/* Navbar her sayfada sabit */}
@@ -41,10 +44,11 @@ function App() {
             <Route path="/frequently-asked-questions" element={<FAQ />} />
           </Routes>
         </main>
-
+        <FormModal /> {/* Form artık burada tek merkezde duruyor */}
         <Footer />
       </div>
     </Router>
+    </FormProvider>
   );
 }
 
