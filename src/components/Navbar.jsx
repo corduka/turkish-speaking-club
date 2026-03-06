@@ -135,23 +135,24 @@ export default function Navbar() {
       exit={{ opacity: 0 }}
       // z-[999] ile her şeyin en üstüne çıkmasını sağlıyoruz. 
       // bg-white kullanarak arka planı tamamen kapatıyoruz (yazılar görünmez).
-      className="fixed inset-0 bg-white opacity-100 z-[999] md:hidden flex flex-col"
+className="fixed inset-0 h-[100dvh] w-full bg-[#F8FAFC] z-[999] md:hidden flex flex-col"
     >
-      {/* Mobil Menü Header (Logo ve Kapatma Butonu) */}
-      <div className="bg-[#F8FAFC] h-20 px-6 flex items-center justify-between border-b border-slate-100">
+{/* 1. Header: Logo ve Kapat */}
+      <div className="flex-none h-20 px-6 flex items-center justify-between border-b border-slate-100 bg-white">
         <div className="text-xl font-extrabold tracking-tighter text-brand-primary">
-          {logo2 && <img src={logo2} alt="turkish speaking club logo" className="h-24 object-cover" loading="lazy" />}
+          {logo2 && <img src={logo2} alt="logo" className="h-16 object-contain" />}
         </div>
+        {/* Butonu buraya tekrar ekledik çünkü overlay nav'ın üstünde kalıyor */}
         <button 
           onClick={() => setIsOpen(false)}
-          className="p-2 text-slate-600 hover:text-brand-primary transition-colors"
+          className="p-2 text-slate-600"
         >
           <X className="w-8 h-8" />
         </button>
       </div>
 
       {/* Menü Linkleri */}
-      <div className="bg-[#F8FAFC] flex-1 flex flex-col items-center justify-center gap-6 px-10">
+      <div className="flex-1 flex flex-col items-center justify-center gap-6 px-10">
         {navItems.map((item, index) => (
           <motion.div
             key={item.name}
@@ -185,7 +186,7 @@ export default function Navbar() {
       </div>
 
       {/* Alt Bilgi */}
-      <div className="bg-[#F8FAFC] opacity-100 p-10 text-center text-slate-400 border-t border-slate-50">
+      <div className="flex-none p-10 text-center text-slate-400 border-t border-slate-50 bg-[#F8FAFC]">
         <p className="text-sm font-medium">Join the club, start talking.</p>
         <p className="text-xs mt-1">info@turkishspeakingclub.com</p>
       </div>

@@ -2,6 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import TermsPrivacy from './pages/TermsPrivacy';
+import FAQ from './pages/FAQ';
 
 // Sayfalar
 import HowItWorks from './pages/HowItWorks';
@@ -33,6 +36,9 @@ function App() {
             {/* Blog Rotaları */}
             <Route path="/blog" element={<BlogList />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/terms-and-privacy" element={<TermsPrivacy />} />
+            <Route path="/frequently-asked-questions" element={<FAQ />} />
           </Routes>
         </main>
 
