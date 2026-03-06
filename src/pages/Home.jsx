@@ -9,6 +9,8 @@ import testimonial1 from "../assets/testimonial1-matthew.jpg";
 import testimonial2 from "../assets/testimonial2.jpg";
 import testimonial3 from "../assets/testimonial3.jpeg";
 import { MessageCircle, Users2, LineChart } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
+
 
 const testimonials = [
   {
@@ -66,7 +68,55 @@ const FAQItem = ({ question, answer }) => {
 };
 
 export default function Home() {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   return (
+    <>
+
+    {/* Tally Modal UI */}
+      <AnimatePresence>
+        {isFormOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[1000] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-white w-full max-w-3xl h-[85vh] rounded-[2.5rem] relative overflow-hidden shadow-2xl shadow-black/20"
+            >
+              {/* Üstte şık bir kapatma barı */}
+        <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white to-transparent pointer-events-none z-10" />
+              <button 
+                onClick={() => setIsFormOpen(false)}
+                className="absolute top-6 right-6 z-10 p-2 bg-slate-100/50 hover:bg-slate-200 transition-colors rounded-full"
+              >
+                <X className="w-6 h-6 text-slate-600" />
+              </button>
+              
+{/* Tally Embed - Loader ekleyerek daha profesyonel yapalım */}
+        <div className="w-full h-full bg-[#F8FAFC]">
+          <iframe 
+            src="https://tally.so/r/kdAaGd?hideTitle=1&transparentBackground=1" 
+            width="100%" 
+            height="100%" 
+            frameBorder="0" 
+            title="Boutique Club Application"
+            className="w-full h-full"
+          />
+        </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <Helmet>
+        <title>Home | Turkish Speaking Club - Master Turkish Naturally</title>
+        <link rel="canonical" href="https://turkishspeakingclub.com/" />
+      </Helmet>
     <main className="bg-white overflow-x-hidden">
       
       {/* 1. HERO SECTION (Orijinal yapın korundu) */}
@@ -97,10 +147,12 @@ export default function Home() {
               transition={{ delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <button className="bg-brand-primary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-xl hover:scale-105 transition-all">
+              <button 
+              onClick={() => setIsFormOpen(true)}
+              className="bee-target bg-brand-primary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-xl hover:scale-105 transition-all">
                 Join The Club
               </button>
-              <button className="bg-white border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold text-lg hover:border-brand-primary transition-all">
+              <button className="bee-target bg-white border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold text-lg hover:border-brand-primary transition-all">
                 See How it Works
               </button>
             </motion.div>
@@ -114,7 +166,7 @@ export default function Home() {
           >
       
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-transparent" />
-      <img src={deneme1} alt="Turkish speaking club" />
+      <img src={deneme1} alt="Turkish speaking club" loading="lazy" />
           </motion.div>
         </div>
       </section>
@@ -235,7 +287,8 @@ export default function Home() {
               <img 
                 src={item.img} 
                 alt={`${item.name} - Testimonial`} // SEO için anlamlı alt text
-                className="w-10 h-10 rounded-full object-cover border border-brand-secondary/30" 
+                className="w-10 h-10 rounded-full object-cover border border-brand-secondary/30"
+                loading="lazy" 
               />
             )}
             <div>
@@ -262,7 +315,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <button className="w-full bg-brand-primary text-white py-6 rounded-2xl font-bold text-xl shadow-xl shadow-brand-primary/20 hover:scale-[1.02] transition-all">
+          <button 
+          onClick={() => setIsFormOpen(true)}
+          className="w-full bg-brand-primary text-white py-6 rounded-2xl font-bold text-xl shadow-xl shadow-brand-primary/20 hover:scale-[1.02] transition-all">
             Join the Free Session
           </button>
         </div>
@@ -282,7 +337,7 @@ export default function Home() {
           </div>
           <div className="w-72 h-72 bg-slate-100 rounded-[3rem] -rotate-2 border-8 border-white shadow-2xl relative group overflow-hidden shrink-0">
              <div className="absolute inset-0 bg-brand-primary/5 group-hover:bg-transparent transition-colors"></div>
-             <p className="flex h-full items-center justify-center text-slate-400 italic">{profile2 && <img src={profile2} alt="Instructor" className="w-full h-full object-cover" />}</p>
+             <figure className="flex h-full items-center justify-center text-slate-400 italic">{profile2 && <img src={profile2} alt="Turkish tutor Abdullah" className="w-full h-full object-cover" loading="lazy" />}</figure>
           </div>
         </div>
       </section>
@@ -309,7 +364,9 @@ export default function Home() {
           className="max-w-4xl mx-auto px-6"
         >
           <h2 className="text-5xl md:text-6xl font-extrabold mb-10 leading-tight">Ready to Finally Speak Turkish <br/> Confidently?</h2>
-          <button className="bg-brand-primary text-white px-14 py-7 rounded-full font-bold text-2xl shadow-2xl hover:bg-brand-dark hover:scale-105 transition-all">
+          <button 
+          onClick={() => setIsFormOpen(true)}
+          className="bg-brand-primary text-white px-14 py-7 rounded-full font-bold text-2xl shadow-2xl hover:bg-brand-dark hover:scale-105 transition-all">
             Join the Free Session
           </button>
         </motion.div>
@@ -319,5 +376,6 @@ export default function Home() {
       <ContactSection />
 
     </main>
+    </>
   );
 }

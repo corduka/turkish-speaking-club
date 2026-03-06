@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Target, Clock, MessageCircle, ArrowRight, Zap } from 'lucide-react';
+import { useState } from 'react';
+import { PopupModal } from 'react-calendly';
 
 const features = [
   { title: 'Personalized Roadmap', desc: 'No generic lessons. We build a curriculum based on your career, travels, or personal interests.', icon: <Target className="w-6 h-6" /> },
@@ -8,7 +10,16 @@ const features = [
 ];
 
 export default function Private() {
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+
   return (
+    <>
+      <PopupModal
+        url="https://calendly.com/abdullah-corduk/30min" // Kendi linkini buraya yapıştır
+        onModalClose={() => setIsCalendlyOpen(false)}
+        open={isCalendlyOpen}
+        rootElement={document.getElementById('root')}
+      />
     <div className="pt-32 pb-20">
       <section className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-16 mb-24">
@@ -20,7 +31,9 @@ export default function Private() {
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
               Private coaching is for those who want more than just a conversation. It's a deep dive into the Turkish language, tailored specifically to your pace and goals.
             </p>
-            <button className="bg-brand-dark text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-3 hover:bg-slate-800 transition-all">
+            <button 
+            onClick={() => setIsCalendlyOpen(true)}
+            className="bg-brand-dark text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-3 hover:bg-slate-800 transition-all">
               Book a Strategy Call <ArrowRight className="w-5 h-5" />
             </button>
           </motion.div>
@@ -41,5 +54,6 @@ export default function Private() {
         </div>
       </section>
     </div>
+  </>
   );
 }

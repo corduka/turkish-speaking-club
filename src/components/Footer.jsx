@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <Link to="/" className="inline-block mb-4">
               <div className="text-xl font-extrabold tracking-tighter text-brand-primary">
-                TURKISH<span className="text-slate-400 uppercase">SpeakingClub</span>
+                       TURKISH<span className="text-slate-400 uppercase">SpeakingClub</span>
               </div>
             </Link>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">

@@ -15,6 +15,7 @@ const navItems = [
 ];
 
 export default function Navbar() {
+  const [isFormOpen, setIsFormOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
@@ -33,6 +34,48 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
+<>
+{/* Tally Modal UI */}
+      <AnimatePresence>
+        {isFormOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[1000] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4"
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-white w-full max-w-3xl h-[85vh] rounded-[2.5rem] relative overflow-hidden shadow-2xl shadow-black/20"
+            >
+{/* Üstte şık bir kapatma barı */}
+        <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white to-transparent pointer-events-none z-10" />
+              <button 
+                onClick={() => setIsFormOpen(false)}
+                className="absolute top-6 right-6 z-10 p-2 bg-slate-100/50 hover:bg-slate-200 transition-colors rounded-full"
+              >
+                <X className="w-6 h-6 text-slate-600" />
+              </button>
+              
+{/* Tally Embed - Loader ekleyerek daha profesyonel yapalım */}
+        <div className="w-full h-full bg-[#F8FAFC]">
+          <iframe 
+            src="https://tally.so/r/kdAaGd?hideTitle=1&transparentBackground=1" 
+            width="100%" 
+            height="100%" 
+            frameBorder="0" 
+            title="Boutique Club Application"
+            className="w-full h-full"
+          />
+        </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+
     <nav className="fixed top-0 w-full z-[100] bg-white/70 backdrop-blur-lg border-b border-slate-200/50">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
@@ -43,7 +86,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             className="text-xl font-extrabold tracking-tighter text-brand-primary"
           >
-            {logo1 && <img src={logo1} alt="logo" className="h-16 object-cover" />}
+            {logo1 && <img src={logo1} alt="logo" className="h-16 object-cover" loading="lazy" />}
           </motion.div>
         </Link>
 
@@ -64,6 +107,7 @@ export default function Navbar() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => setIsFormOpen(true)}
             className="bg-brand-primary text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md shadow-brand-primary/20"
           >
             Try Free
@@ -96,7 +140,7 @@ export default function Navbar() {
       {/* Mobil Menü Header (Logo ve Kapatma Butonu) */}
       <div className="bg-[#F8FAFC] h-20 px-6 flex items-center justify-between border-b border-slate-100">
         <div className="text-xl font-extrabold tracking-tighter text-brand-primary">
-          {logo2 && <img src={logo2} alt="logo" className="h-24 object-cover" />}
+          {logo2 && <img src={logo2} alt="turkish speaking club logo" className="h-24 object-cover" loading="lazy" />}
         </div>
         <button 
           onClick={() => setIsOpen(false)}
@@ -132,7 +176,9 @@ export default function Navbar() {
           transition={{ delay: 0.4 }}
           className="w-full pt-6"
         >
-          <button className="w-full bg-brand-primary text-white py-5 rounded-2xl text-xl font-bold shadow-xl shadow-brand-primary/20">
+          <button 
+          onClick={() => setIsFormOpen(true)}
+          className="w-full bg-brand-primary text-white py-5 rounded-2xl text-xl font-bold shadow-xl shadow-brand-primary/20">
             Try Free
           </button>
         </motion.div>
@@ -147,5 +193,6 @@ export default function Navbar() {
   )}
 </AnimatePresence>
     </nav>
+    </>
   );
 }
