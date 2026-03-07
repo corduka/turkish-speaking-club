@@ -1,110 +1,137 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Zap, Star, Crown } from 'lucide-react';
+import { useForm } from '../context/FormContext';
+import { Check, Globe, Wallet, ShieldCheck, Zap } from 'lucide-react';
 
-const plans = [
+const pricingDetails = [
   {
-    name: "Starter Club",
-    price: "49",
-    description: "Perfect for building consistency and overcoming speaking anxiety.",
-    features: ["2 Group Sessions / week", "Access to Materials Hub", "Weekly Checklist PDF", "Community Chat Access"],
-    icon: <Zap className="w-6 h-6" />,
-    popular: false,
-  },
-  {
-    name: "Pro Speaker",
-    price: "89",
-    description: "The most efficient way to reach fluency with intensive practice.",
-    features: ["Unlimited Group Sessions", "1-on-1 Monthly Coaching", "Personalized Mistake Log", "Priority Support", "All Premium Materials"],
-    icon: <Star className="w-6 h-6" />,
-    popular: true,
-  },
-  {
-    name: "Elite 1:1",
-    price: "149",
-    description: "Fully customized experience for rapid professional growth.",
-    features: ["Exclusive 1-on-1 Sessions", "Custom Curriculum", "24/7 WhatsApp Support", "Business Turkish Focus", "Lifetime Material Access"],
-    icon: <Crown className="w-6 h-6" />,
-    popular: false,
+    name: "Boutique Club Membership",
+    price: "99", // Örnektir, dilediğin gibi güncelleyebilirsin
+    period: "/ month",
+    description: "Ideal for heritage learners and partners looking for consistent practice.",
+    features: [
+      "2 Free Trial Sessions",
+      "Weekly Boutique Group Sessions (Max 5)",
+      "Structured Monthly Learning Plan",
+      "Access to Personal Feedback Notes",
+      "Direct WhatsApp Support",
+      "Cancel Anytime"
+    ],
+    highlight: true
   }
 ];
 
+const paymentMethods = [
+  { name: "Global", icons: "PayPal / Stripe / Wise", desc: "Easy international transfers" },
+  { name: "Latin America", icons: "Nequi (Colombia)", desc: "Local payment for LatAm students" },
+  { name: "Professional", icons: "Payoneer / Payoneer Card", desc: "Flexible for business transfers" },
+  { name: "Turkey", icons: "All Major Bank Accounts", desc: "Direct EFT/Havale options" }
+];
+
 export default function Membership() {
+  const { openForm } = useForm();
+
   return (
-    <section className="py-24 bg-slate-50/50">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Choose Your <span className="text-brand-primary">Growth Path</span>
-          </h2>
-          <p className="mt-4 text-slate-500 text-lg max-w-2xl mx-auto">
-            Transparent pricing with no hidden fees. Join the club and start speaking Turkish with confidence.
+    <main className="pt-32 pb-20 px-6 bg-slate-50 min-h-screen">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Başlık */}
+        <div className="text-center mb-16">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl font-extrabold mb-4"
+          >
+            Simple, Transparent <span className="text-brand-primary">Pricing.</span>
+          </motion.h1>
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+            No hidden fees. No complicated contracts. Just a clear path to Turkish fluency with a method that works.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          {plans.map((plan, index) => (
-            <motion.div
-              key={plan.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className={`relative p-8 rounded-[3rem] transition-all duration-500 ${
-                plan.popular 
-                ? 'bg-slate-900 text-white shadow-2xl shadow-blue-900/20 scale-105 z-10' 
-                : 'bg-white text-slate-800 border border-slate-100 shadow-xl shadow-slate-200/50'
-              }`}
-            >
-              {plan.popular && (
-                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-brand-primary text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg animate-pulse">
+        <div className="grid lg:grid-cols-3 gap-12 items-start">
+          
+          {/* 1. PAKET TABLOSU (2/3 Genişlik) */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="lg:col-span-2 bg-white rounded-[3rem] p-8 md:p-12 shadow-xl border border-slate-100"
+          >
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
+              <div>
+                <span className="bg-brand-secondary/10 text-brand-secondary px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest">
                   Most Popular
+                </span>
+                <h2 className="text-3xl font-bold mt-4">{pricingDetails[0].name}</h2>
+                <p className="text-slate-500 mt-2">{pricingDetails[0].description}</p>
+              </div>
+              <div className="text-left md:text-right">
+                <span className="text-5xl font-black text-slate-900">${pricingDetails[0].price}</span>
+                <span className="text-slate-400 font-medium">{pricingDetails[0].period}</span>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-10">
+              {pricingDetails[0].features.map((feature, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <div className="bg-emerald-100 p-1 rounded-full">
+                    <Check className="w-4 h-4 text-emerald-600" />
+                  </div>
+                  <span className="text-slate-600 font-medium">{feature}</span>
                 </div>
-              )}
+              ))}
+            </div>
 
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 ${
-                plan.popular ? 'bg-white/10 text-brand-primary' : 'bg-brand-primary/10 text-brand-primary'
-              }`}>
-                {plan.icon}
-              </div>
+            <button 
+              onClick={() => openForm('membership_page_main')}
+              className="w-full bg-brand-primary text-white py-6 rounded-2xl font-bold text-xl hover:bg-brand-dark transition-all shadow-lg shadow-brand-primary/20 flex items-center justify-center gap-3 group"
+            >
+              <Zap className="w-6 h-6 fill-current" /> Join the Club & Get 2 Free Sessions
+            </button>
+          </motion.div>
 
-              <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-              <div className="flex items-baseline justify-center gap-1 mb-4">
-                <span className="text-4xl font-extrabold">${plan.price}</span>
-                <span className={plan.popular ? 'text-slate-400' : 'text-slate-500'}>/month</span>
-              </div>
-              <p className={`text-sm mb-8 leading-relaxed ${plan.popular ? 'text-slate-300' : 'text-slate-500'}`}>
-                {plan.description}
-              </p>
-
-              <div className="space-y-4 mb-10 text-left">
-                {plan.features.map((feature) => (
-                  <div key={feature} className="flex items-start gap-3">
-                    <div className={`mt-1 p-0.5 rounded-full ${plan.popular ? 'bg-brand-primary text-white' : 'bg-green-100 text-green-600'}`}>
-                      <Check className="w-3.5 h-3.5" />
-                    </div>
-                    <span className="text-sm font-medium">{feature}</span>
+          {/* 2. ÖDEME YÖNTEMLERİ (1/3 Genişlik) */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="space-y-6"
+          >
+            <div className="bg-brand-dark text-white rounded-[2.5rem] p-8 shadow-xl">
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+                <Wallet className="w-5 h-5 text-brand-secondary" /> Flexible Payment
+              </h3>
+              <div className="space-y-6">
+                {paymentMethods.map((method, i) => (
+                  <div key={i} className="border-b border-white/10 pb-4 last:border-0 last:pb-0">
+                    <p className="text-brand-secondary text-xs font-bold uppercase tracking-widest mb-1">{method.name}</p>
+                    <p className="font-semibold text-sm">{method.icons}</p>
+                    <p className="text-white/50 text-xs mt-1">{method.desc}</p>
                   </div>
                 ))}
               </div>
+            </div>
 
-              <button className={`w-full py-4 rounded-2xl font-bold transition-all active:scale-95 ${
-                plan.popular 
-                ? 'bg-brand-primary text-white hover:bg-white hover:text-slate-900 shadow-lg shadow-brand-primary/20' 
-                : 'bg-slate-100 text-slate-800 hover:bg-slate-900 hover:text-white'
-              }`}>
-                Get Started Now
-              </button>
-            </motion.div>
-          ))}
+            <div className="bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-sm">
+              <ShieldCheck className="w-10 h-10 text-emerald-500 mb-4" />
+              <h4 className="font-bold text-lg mb-2">Secure Enrollment</h4>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                We use industry-standard encryption. Your first 2 sessions are a risk-free trial. Payment only begins when you decide to continue.
+              </p>
+            </div>
+          </motion.div>
+
+        </div>
+
+        {/* FAQ Seksiyonuna Link veya Küçük Not */}
+        <div className="mt-20 text-center">
+          <p className="text-slate-400">
+            Have a specific question about payments or group hours? 
+            <button onClick={() => openForm('membership_question')} className="text-brand-primary font-bold ml-1 hover:underline">
+              Contact me directly.
+            </button>
+          </p>
         </div>
       </div>
-    </section>
+    </main>
   );
 }
