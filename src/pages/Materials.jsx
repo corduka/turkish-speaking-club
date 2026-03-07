@@ -155,7 +155,7 @@ export default function Materials() {
               <Play className="fill-current w-8 h-8" /> Interactive Practice
             </h3>
             <p className="text-slate-300 mb-10 text-lg leading-relaxed">
-              Say goodbye to boring flashcards. We're building word games and grammar challenges to make your practice sessions addictive.
+              Say goodbye to boring flashcards. I'm building word games and grammar challenges to make your practice sessions addictive.
             </p>
             <div className="inline-block px-6 py-3 bg-white/10 backdrop-blur-md rounded-2xl text-sm font-bold border border-white/20">
               Launching April 2026
