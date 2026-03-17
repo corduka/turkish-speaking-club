@@ -128,8 +128,6 @@ export default function Navbar() {
             <div className="absolute top-[-10%] right-[-10%] w-80 h-80 bg-brand-primary/5 blur-[100px] rounded-full -z-10" />
 
             <div className="flex-1 flex flex-col pt-32 px-10">
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-10">Navigation</p>
-              
               <div className="space-y-6">
                 {navItems.map((item, i) => (
                   <motion.div key={item.name} custom={i} variants={itemVariants} initial="closed" animate="open">
@@ -138,7 +136,6 @@ export default function Navbar() {
                       className="group flex items-end gap-4"
                       onClick={() => setIsOpen(false)}
                     >
-                      <span className="text-[12px] font-serif italic text-brand-primary mb-2 opacity-50">{item.id}</span>
                       <span className={`text-4xl font-black tracking-tighter ${location.pathname === item.path ? 'text-brand-primary' : 'text-slate-900'}`}>
                         {item.name}
                       </span>
