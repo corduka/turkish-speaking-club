@@ -50,7 +50,7 @@ export default function Footer() {
               <ul className="space-y-5 text-[13px] font-bold tracking-tight">
                 <li><Link to="/blog" className="hover:text-brand-primary transition-colors flex items-center justify-center md:justify-start gap-1 group">Blog <ArrowUpRight className="w-3 h-3 text-slate-700 group-hover:text-brand-primary transition-colors" /></Link></li>
                 <li><Link to="/materials" className="hover:text-brand-primary transition-colors">Free Materials</Link></li>
-                <li><span className="text-slate-700 italic font-medium">Interactive Games</span></li>
+                <li><span className="text-slate-700 italic font-medium cursor-not-allowed">Interactive Games</span></li>
               </ul>
             </div>
 

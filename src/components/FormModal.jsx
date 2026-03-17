@@ -38,7 +38,7 @@ export default function FormModal() {
             </button>
 
             {/* 3. Form Content */}
-            <div className="relative w-full h-full pt-16 pb-4">
+            <div className="relative w-full h-full pb-4">
               {/* Iframe Loading State Shadow (İsteğe bağlı) */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-slate-50/50 to-transparent pointer-events-none" />
               
