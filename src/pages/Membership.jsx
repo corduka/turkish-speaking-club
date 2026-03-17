@@ -126,9 +126,7 @@ export default function Membership() {
         <div className="mt-20 text-center">
           <p className="text-slate-400">
             Have a specific question about payments or group hours? 
-            <button onClick={() => openForm('membership_question')} className="text-brand-primary font-bold ml-1 hover:underline">
-              Contact me directly.
-            </button>
+            <a href="https://wa.me/00573219372828" target="_blank" className="text-brand-primary font-bold ml-1 hover:underline">Contact me directly.</a>
           </p>
         </div>
       </div>

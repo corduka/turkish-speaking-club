@@ -71,7 +71,7 @@ export default function Footer() {
                 <li><Link to="/about" className="hover:text-brand-primary transition-colors">Meet Abdullah</Link></li>
                 <li><Link to="/frequently-asked-questions" className="hover:text-brand-primary transition-colors">FAQs</Link></li>
                 <li className="flex justify-center md:justify-start">
-                  <a href="https://wa.me/00573219372828" className="hover:text-brand-primary transition-colors">WhatsApp Support</a>
+                  <a href="https://wa.me/00573219372828" target="_blank" className="hover:text-brand-primary transition-colors">WhatsApp Support</a>
                 </li>
                 <li><Link to="/terms-and-privacy" className="text-slate-700 hover:text-slate-500 transition-colors">Privacy Policy</Link></li>
               </ul>
