@@ -54,24 +54,45 @@ export default function Navbar() {
           </motion.div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-10">
-          {navItems.map((item) => (
-            <Link 
-              key={item.name} 
-              to={item.path} 
-              className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-all hover:text-brand-primary ${location.pathname === item.path ? 'text-brand-primary' : 'text-slate-500'}`}
-            >
-              {item.name}
-            </Link>
-          ))}
-          <button
-            onClick={() => openForm('navbar')}
-            className="bg-slate-900 text-white px-7 py-3 rounded-full text-[12px] font-black uppercase tracking-widest hover:bg-brand-primary hover:shadow-lg hover:shadow-brand-primary/20 transition-all active:scale-95"
-          >
-            Try Free
-          </button>
-        </div>
+{/* Desktop Nav - Refined Version */}
+<div className="hidden md:flex items-center gap-10">
+  {navItems.map((item, index) => (
+    <motion.div
+      key={item.name}
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
+      className="relative group"
+    >
+      <Link 
+        to={item.path} 
+        className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all duration-300 ${
+          location.pathname === item.path ? 'text-brand-primary' : 'text-slate-500 hover:text-slate-900'
+        }`}
+      >
+        {item.name}
+      </Link>
+      
+      {/* Active Indicator: Zarif bir alt nokta */}
+      {location.pathname === item.path && (
+        <motion.div 
+          layoutId="nav-dot"
+          className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-brand-primary rounded-full"
+        />
+      )}
+    </motion.div>
+  ))}
+
+  {/* CTA Button: Sophisticated & Strong */}
+  <motion.button
+    whileHover={{ scale: 1.02, y: -2 }}
+    whileTap={{ scale: 0.98 }}
+    onClick={() => openForm('navbar')}
+    className="ml-4 bg-slate-900 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-2xl shadow-slate-200 hover:bg-brand-primary hover:shadow-brand-primary/20 transition-all duration-500"
+  >
+    Try Free
+  </motion.button>
+</div>
 
         {/* Custom Premium Hamburger Button */}
         <button 
