@@ -26,8 +26,8 @@ export default function Footer() {
             </p>
             <div className="flex items-center justify-center md:justify-start gap-6 pt-4">
               {[
-                { icon: <Instagram className="w-5 h-5" />, href: "#" },
-                { icon: <Linkedin className="w-5 h-5" />, href: "#" },
+                { icon: <Instagram className="w-5 h-5 cursor-not-allowed" />, href: "#" },
+                { icon: <Linkedin className="w-5 h-5 cursor-not-allowed" />, href: "#" },
                 { icon: <Youtube className="w-5 h-5" />, href: "#" }
               ].map((social, i) => (
                 <a 

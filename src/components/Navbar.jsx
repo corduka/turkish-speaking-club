@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowUpRight, Instagram, Linkedin, Mail } from 'lucide-react';
 import logo1 from "../assets/logo1.png";
-import logo2 from "../assets/logo2.png";
 import { useForm } from '../context/FormContext';
 
 const navItems = [
