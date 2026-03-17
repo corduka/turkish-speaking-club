@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, Youtube, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Instagram, Linkedin, Youtube, ArrowUpRight } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-primary/5 blur-[120px] rounded-full -z-10 opacity-60" />
 
       <div className="max-w-7xl mx-auto px-6 text-center md:text-left">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-20 md:gap-16 mb-24">
           
           {/* Brand Identity */}
           <div className="md:col-span-5 lg:col-span-4 space-y-8">
@@ -41,14 +41,14 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links Grouping */}
-          <div className="md:col-span-7 lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12">
+          {/* Quick Links Grouping - Mobilde grid-cols-1 yaparak alt alta dizeceğiz */}
+          <div className="md:col-span-7 lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
             
             {/* Column: Resources */}
             <div className="space-y-8">
               <h4 className="font-black text-white uppercase tracking-[0.2em] text-[10px] opacity-50">Resources</h4>
               <ul className="space-y-5 text-[13px] font-bold tracking-tight">
-                <li><Link to="/blog" className="hover:text-brand-primary transition-colors flex items-center gap-1 group">Blog <ArrowUpRight className="w-3 h-3 text-slate-700 group-hover:text-brand-primary transition-colors" /></Link></li>
+                <li><Link to="/blog" className="hover:text-brand-primary transition-colors flex items-center justify-center md:justify-start gap-1 group">Blog <ArrowUpRight className="w-3 h-3 text-slate-700 group-hover:text-brand-primary transition-colors" /></Link></li>
                 <li><Link to="/materials" className="hover:text-brand-primary transition-colors">Free Materials</Link></li>
                 <li><span className="text-slate-700 italic font-medium">Interactive Games</span></li>
               </ul>
@@ -65,12 +65,14 @@ export default function Footer() {
             </div>
 
             {/* Column: Support */}
-            <div className="space-y-8 col-span-2 md:col-span-1">
+            <div className="space-y-8">
               <h4 className="font-black text-white uppercase tracking-[0.2em] text-[10px] opacity-50">Support</h4>
-              <ul className="space-y-5 text-[13px] font-bold tracking-tight">
+              <ul className="space-y-5 text-[13px] font-bold tracking-tight text-center md:text-left">
                 <li><Link to="/about" className="hover:text-brand-primary transition-colors">Meet Abdullah</Link></li>
-                <li><Link to="/about" className="hover:text-brand-primary transition-colors">FAQs</Link></li>
-                <li><a href="https://wa.me/00573219372828" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/5 text-slate-300 hover:text-white hover:bg-white/10 transition-all">WhatsApp Support</a></li>
+                <li><Link to="/frequently-asked-questions" className="hover:text-brand-primary transition-colors">FAQs</Link></li>
+                <li className="flex justify-center md:justify-start">
+                  <a href="https://wa.me/00573219372828" className="hover:text-brand-primary transition-colors">WhatsApp Support</a>
+                </li>
                 <li><Link to="/terms-and-privacy" className="text-slate-700 hover:text-slate-500 transition-colors">Privacy Policy</Link></li>
               </ul>
             </div>
@@ -78,21 +80,12 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar: The Signature */}
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-            <p className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-700">
-              © {currentYear} Turkish Speaking Club.
-            </p>
-            <div className="hidden md:block h-1 w-1 rounded-full bg-slate-800" />
-            <p className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-700">
-              Designed with <span className="text-brand-primary mx-1">♥</span> for Turkish learners.
-            </p>
-          </div>
-          
-          <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-black text-slate-700 group cursor-default">
-             Handcrafted by <span className="text-slate-500 group-hover:text-brand-primary transition-colors">Abdullah</span> <Sparkles className="w-3 h-3 text-brand-primary" />
-          </div>
+        {/* Bottom Bar: Clean & Minimalist */}
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] uppercase tracking-[0.3em] font-black text-slate-700">
+          <p>© {currentYear} Turkish Speaking Club.</p>
+          <p className="flex items-center gap-1">
+            Designed with <span className="text-brand-primary mx-1">♥</span> for Turkish learners.
+          </p>
         </div>
       </div>
     </footer>
