@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowUpRight, Instagram, Linkedin, Mail } from 'lucide-react';
-import logo1 from "../assets/logo1.png";
+import mainLogo from "../assets/main-logo.webp";
 import { useForm } from '../context/FormContext';
 
 const navItems = [
@@ -49,7 +49,7 @@ export default function Navbar() {
         {/* Logo Section */}
         <Link to="/" className="z-[110]">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <img src={logo1} alt="logo" className="h-12 md:h-14 object-contain" />
+            <img src={mainLogo} alt="logo" className="h-12 md:h-14 object-contain" />
           </motion.div>
         </Link>
 

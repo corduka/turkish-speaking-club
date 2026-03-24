@@ -10,7 +10,7 @@ import {
   ArrowRight,
   Sparkles
 } from 'lucide-react';
-import profile from "../assets/profil.jpeg"; // Mevcut profil fotoğrafın
+import mainProfile from "../assets/main-profile.webp"; // Mevcut profil fotoğrafın
 
 export default function About() {
   const { openForm } = useForm();
@@ -140,7 +140,7 @@ export default function About() {
             className="bg-brand-secondary/10 rounded-[2.5rem] p-6 flex flex-col justify-between relative overflow-hidden group"
           >
              <div className="flex items-center gap-3">
-                <img src={profile} alt="Abdullah" className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-md" />
+                <img src={mainProfile} alt="Abdullah" className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-md" />
                 <span className="font-bold text-slate-800 text-sm tracking-tight">Let's start your journey.</span>
              </div>
              <button 

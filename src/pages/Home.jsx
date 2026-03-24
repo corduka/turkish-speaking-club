@@ -11,11 +11,11 @@ import { Helmet } from 'react-helmet-async';
 
 // Bileşenler ve Assetler
 import ContactSection from '../components/ContactSection';
-import deneme1 from "../assets/deneme-1.png";
-import profile2 from "../assets/profile2.jpg";
-import testimonial1 from "../assets/testimonial1-matthew.jpg";
-import testimonial2 from "../assets/testimonial2.jpg";
-import testimonial3 from "../assets/testimonial3.jpeg";
+import heroImg from "../assets/hero-image.webp";
+import mainProfile from "../assets/main-profile.webp";
+import testimonial1 from "../assets/testimonial-1.webp";
+import testimonial2 from "../assets/testimonial-2.webp";
+import testimonial3 from "../assets/testimonial-3.webp";
 
 //Section 2: hareketli rakamlar
 const AnimatedNumber = ({ value }) => {
@@ -144,7 +144,7 @@ export default function Home() {
             >
               <div className="absolute -inset-4 bg-brand-primary/10 rounded-[4rem] rotate-3 blur-2xl -z-10" />
               <div className="aspect-[4/3] bg-slate-100 rounded-[3.5rem] overflow-hidden shadow-2xl border-[12px] border-white relative group">
-                <img src={deneme1} alt="Turkish speaking club" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={heroImg} alt="Turkish speaking club" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
             </motion.div>
           </div>
@@ -541,7 +541,7 @@ export default function Home() {
                 <div className="relative">
                   <div className="w-72 h-[480px] md:w-80 md:h-[520px] bg-slate-100 rounded-[5rem] rotate-2 border-[1px] border-slate-200 shadow-[40px_40px_80px_-20px_rgba(0,0,0,0.1)] overflow-hidden group">
                     <img 
-                      src={profile2} 
+                      src={mainProfile} 
                       alt="Tutor Abdullah" 
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-[-2deg]" 
                     />

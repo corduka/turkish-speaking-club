@@ -80,7 +80,7 @@ export default function BlogDetail() {
 
         <div className="flex items-center gap-4 border-b border-slate-100 pb-12">
           <div className="w-12 h-12 bg-slate-200 rounded-full overflow-hidden border-2 border-slate-50">
-             <img src="/images/blog/common/abdullah.jpg" alt="Abdullah" className="w-full h-full object-cover" />
+             <img src="/images/blog/common/abdullah.webp" alt="Abdullah" className="w-full h-full object-cover" />
           </div>
           <div>
             <span className="block font-bold text-slate-800">Abdullah Corduk</span>

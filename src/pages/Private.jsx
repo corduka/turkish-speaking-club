@@ -5,7 +5,7 @@ import {
   Check, Star, Crown, ShieldCheck, Sparkles, Globe 
 } from 'lucide-react';
 import { PopupModal } from 'react-calendly';
-import profil from "../assets/profil.jpeg"; // Profil fotoğrafın
+import mainProfile from "../assets/main-profile.webp"; // Profil fotoğrafın
 
 const plans = [
   {
@@ -91,7 +91,7 @@ export default function Private() {
             >
               <div className="absolute -inset-4 bg-brand-primary/5 rounded-[4rem] -rotate-3"></div>
               <div className="relative bg-white rounded-[3.5rem] overflow-hidden border-8 border-white shadow-2xl aspect-[4/5]">
-                <img src={profil} alt="Abdullah - Turkish Coach" className="w-full h-full object-cover" />
+                <img src={mainProfile} alt="Abdullah - Turkish Coach" className="w-full h-full object-cover" />
                 <div className="absolute bottom-6 left-6 right-6 p-6 bg-white/90 backdrop-blur-md rounded-3xl border border-white/50">
                    <div className="flex items-center gap-3">
                       <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>

@@ -6,7 +6,7 @@ export const blogPosts = [
     category: "Language Lab",
     date: "March 6, 2026",
     excerpt: "Turkish is often described as a 'mathematical' language. For someone who writes code, the suffix-based structure feels surprisingly familiar.",
-    image: "/images/blog/posts/turkish-logic.png",
+    image: "/images/blog/posts/turkish-logic.webp",
     readTime: "5 min read"
   },
   {
@@ -16,7 +16,7 @@ export const blogPosts = [
     category: "Taste of Turkey",
     date: "March 6, 2026",
     excerpt: "The ultimate debate of Turkish breakfast culture. We explore the history and the best way to cook this masterpiece.",
-    image: "https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=1964&auto=format&fit=crop", // Örnek yemek görseli
+    image: "/images/blog/posts/menemen.webp", // Örnek yemek görseli
     readTime: "4 min read"
   },
   {
@@ -26,7 +26,7 @@ export const blogPosts = [
     category: "Media & Books",
     date: "March 6, 2026",
     excerpt: "Improve your listening skills with these 5 gripping Turkish dramas available on international platforms.",
-    image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=80&w=2070&auto=format&fit=crop", // Örnek medya görseli
+    image: "/images/blog/posts/turkish-series.webp", // Örnek medya görseli
     readTime: "6 min read"
   }
 ];
