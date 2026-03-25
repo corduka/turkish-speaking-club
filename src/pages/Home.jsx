@@ -95,9 +95,6 @@ export default function Home() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[800px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-primary/5 via-transparent to-transparent -z-10" />
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 text-center lg:text-left">
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-bold mb-8">
-                <Sparkles className="w-4 h-4" /> <span>Limited Enrollment for March</span>
-              </motion.div>
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -112,7 +109,7 @@ export default function Home() {
                 transition={{ delay: 0.2 }}
                 className="text-xl text-slate-500 mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed"
               >
-                Join expert-led boutique groups of 5. Learn naturally, speak fluently, and build confidence. Your first 2 sessions are on us!
+                Join expert-led boutique groups of 5. Learn naturally, speak fluently, and build confidence. Your first session is free!
               </motion.p>
 
               <motion.div 
@@ -218,7 +215,7 @@ export default function Home() {
                     </span>
                   </h2>
                   <p className="text-xl text-slate-500 leading-relaxed max-w-lg">
-                    Traditional methods treat language like a set of static rules. We treat it as a <span className="text-slate-900 font-bold">living connection.</span> 
+                    Traditional methods treat language like a set of static rules. I treat it as a <span className="text-slate-900 font-bold">living connection. </span> 
                     Stop decoding, start speaking.
                   </p>
                 </motion.div>
@@ -381,7 +378,7 @@ export default function Home() {
               {[
                 { t: "Speaking > Grammar", d: "We prioritize actual usage over dry, isolated rules. Every session is 100% active speaking.", icon: <MessageCircle className="w-8 h-8 text-brand-secondary" /> },
                 { t: "Real Interaction", d: "Small, curated groups of 4-6 students. You're never just a number here.", icon: <Users2 className="w-8 h-8 text-brand-secondary" /> },
-                { t: "The Developer Logic", d: "Using my tech background to explain Turkish grammar as a logical, beautiful system.", icon: <LineChart className="w-8 h-8 text-brand-secondary" /> }
+                { t: "The Architecture of Fluency", d: "Turkish is a beautifully logical system. I deconstruct complex grammar into clear frameworks for effortless fluency.", icon: <LineChart className="w-8 h-8 text-brand-secondary" /> }
               ].map((val, i) => (
                 <div key={i} className="p-10 rounded-[3rem] bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all group">
                   <div className="mb-8 p-4 bg-white/5 rounded-2xl inline-block group-hover:scale-110 transition-transform">{val.icon}</div>
@@ -393,28 +390,52 @@ export default function Home() {
           </div>
         </section>
 
-{/* 7. TRUSTED BY LEARNERS GLOBALLY */}
+{/* 7. INSIDE THE CLUB - TESTIMONIALS */}
 <section className="py-40 bg-white">
   <div className="max-w-7xl mx-auto px-6">
     <div className="text-center mb-24">
+      {/* Üstteki Yıldızlar */}
       <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         className="flex justify-center gap-1 mb-6"
       >
         {[...Array(5)].map((_, i) => (
           <Star key={i} className="w-5 h-5 fill-brand-secondary text-brand-secondary" />
         ))}
       </motion.div>
-      <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
-        Trusted by <span className="text-brand-primary italic font-serif">Global Professionals</span>
-      </h2>
+
+      {/* Yeni Başlık */}
+      <motion.h2 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4"
+      >
+        Inside <span className="text-brand-primary italic font-serif">The Club</span>
+      </motion.h2>
+
+      {/* Yeni Alt Başlık */}
+      <motion.p 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        viewport={{ once: true }}
+        className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto"
+      >
+        Voices from our global community of lifelong learners.
+      </motion.p>
     </div>
 
     <div className="grid md:grid-cols-3 gap-10">
-      {testimonials.map((item) => (
+      {testimonials.map((item, index) => (
         <motion.div 
           key={item.id}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1, duration: 0.5 }}
+          viewport={{ once: true }}
           whileHover={{ y: -10 }}
           className="relative p-10 bg-white rounded-[3rem] border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-500 group overflow-hidden"
         >
@@ -427,7 +448,7 @@ export default function Home() {
           </div>
 
           <div className="relative z-10">
-            {/* Yıldızlar (Her yorum için küçük) */}
+            {/* Yıldızlar (Hover'da görünen) */}
             <div className="flex gap-0.5 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-3 h-3 fill-brand-secondary text-brand-secondary" />
@@ -493,10 +514,10 @@ export default function Home() {
                 
                 <div className="space-y-8 mb-16">
                   {[
-                    { t: "First Month Free Trial", d: "Zero risk. Experience the logic before you commit." },
-                    { t: "Weekly Speaking Sessions", d: "Dynamic conversations led by an expert developer & linguist." },
+                    { t: "First Lesson Free Trial", d: "Zero risk. Experience the logic of the club before you join the circle." },
+                    { t: "Weekly Speaking Sessions", d: "Dynamic conversations led by an expert inguist." },
                     { t: "Boutique Group Interaction", d: "Never more than 6 students. High-bandwidth learning." },
-                    { t: "Curated Learning Materials", d: "Logic-based notes sent directly to your inbox." }
+                    { t: "Tailored Study Assets", d: "Logic-based notes sent directly to your inbox." }
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-5 group/item">
                       <div className="mt-1 bg-brand-primary/10 p-1.5 rounded-xl group-hover/item:bg-brand-primary group-hover/item:text-white transition-colors duration-300">
@@ -575,10 +596,10 @@ export default function Home() {
                 <div className="space-y-6">
                   <p className="text-2xl md:text-3xl text-slate-800 font-medium leading-tight tracking-tight">
                     "I don't just teach Turkish— <br className="hidden md:block" />
-                    <span className="text-brand-primary">I explain its logic.</span>"
+                    <span className="text-brand-primary">I deconstruct its logic.</span>"
                   </p>
                   <p className="text-slate-500 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
-                    As an <span className="text-slate-900 font-bold">Economics</span> graduate and <span className="text-slate-900 font-bold">Front-End Developer</span>, I see language as a beautiful, structured system. My method is designed for professionals who want to understand the 'why' and start speaking from day one.
+                    Graduated with <span className="text-slate-900 font-bold">Honors in Turkish Language and Literature</span> and backed by <span className="text-slate-900 font-bold">10+ years </span>of professional experience, I view Turkish as a masterpiece of logic.
                   </p>
                 </div>
 
@@ -610,10 +631,10 @@ export default function Home() {
             
             <div className="space-y-4">
               {[
-                { q: "Is it beginner friendly?", a: "Absolutely. We have dedicated 'First Steps' groups starting from A1 level, designed to build your foundation through natural conversation from day one." },
-                { q: "How many students in a group?", a: "To ensure the highest quality of interaction, we strictly cap sessions at 4–6 students. This boutique approach is what makes the progress so rapid." },
+                { q: "Is it beginner friendly?", a: "Absolutely. I have dedicated 'First Steps' groups starting from A1 level, designed to build your foundation through natural conversation from day one." },
+                { q: "How many students in a group?", a: "To ensure the highest quality of interaction, I strictly cap sessions at 4–6 students. This boutique approach is what makes the progress so rapid." },
                 { q: "What if I miss a session?", a: "Life happens. While live participation is best, you'll receive detailed logic-based notes and summary of the session to keep you on track." },
-                { q: "Is there homework?", a: "No boring drills or repetitive worksheets. We provide curated topics, short videos, or thought-provoking questions to prepare your mind for the next session." }
+                { q: "Is there homework?", a: "We replace repetitive drills with Pre-Session Briefings. Instead of worksheets, you’ll receive curated insights, short videos, or thought-provoking prompts designed to prime your mind for the next conversation." }
               ].map((item, i) => (
                 <div key={i} className="group border-b border-slate-100 last:border-0">
                   <FAQItem question={item.q} answer={item.a} />
@@ -648,17 +669,38 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-brand-primary text-xs font-bold uppercase tracking-[0.3em] mb-12">
               <Sparkles className="w-4 h-4" /> 
-              <span>Start Your Transformation</span>
+              <span>Unlock the Logic</span>
             </div>
 
-            <h2 className="text-6xl md:text-9xl font-black mb-12 tracking-tighter text-white leading-[0.9]">
-              Ready to <br /> 
-              <span className="text-brand-primary italic font-serif font-light">Speak?</span>
-            </h2>
-
-            <p className="text-xl md:text-2xl text-slate-400 mb-16 max-w-2xl mx-auto leading-relaxed font-medium">
-              Your journey to confidence starts with a single conversation. Your first 2 boutique sessions are <span className="text-white border-b border-brand-primary">100% on us.</span>
-            </p>
+<h2 className="text-7xl md:text-9xl font-black mb-12 tracking-tighter leading-[0.85] overflow-visible">
+  {/* "Ready to" - Kesilme sorunu için px-4 ve py-2 eklendi */}
+  <motion.span 
+    initial={{ backgroundPosition: "-200% 0" }}
+    animate={{ backgroundPosition: "200% 0" }}
+    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+    className="inline-block px-4 py-2 bg-gradient-to-r from-white via-slate-400 to-white bg-[length:200%_auto] bg-clip-text text-transparent"
+  >
+    Ready to
+  </motion.span> 
+  <br /> 
+  {/* "Speak?" */}
+  <span className="text-brand-primary italic font-serif font-light drop-shadow-[0_0_30px_rgba(0,173,181,0.3)]">
+    Speak?
+  </span>
+</h2>
+<p className="text-xl md:text-2xl text-slate-500 mb-20 max-w-3xl mx-auto leading-relaxed font-medium">
+  Your journey to confidence starts with a single conversation. <br className="hidden md:block" />
+  <span className="inline-flex items-center flex-wrap justify-center gap-x-3">
+    Your first boutique session is{/* 100% on me - Ready to ile aynı animasyon ve stil */}
+  <motion.span 
+    initial={{ backgroundPosition: "200% 0" }}
+    animate={{ backgroundPosition: "-200% 0" }}
+    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+    className="inline-block py-2 bg-gradient-to-r from-white via-slate-500 to-white bg-[length:200%_auto] bg-clip-text text-transparent"
+  >100% on me.
+  </motion.span> 
+  </span>
+</p>
 
             <div className="flex flex-col items-center gap-8">
               <button 
@@ -666,7 +708,7 @@ export default function Home() {
                 className="group relative bg-brand-primary text-white px-16 py-8 rounded-full font-bold text-2xl md:text-3xl shadow-[0_20px_50px_rgba(var(--brand-primary-rgb),0.3)] hover:shadow-[0_30px_70px_rgba(var(--brand-primary-rgb),0.5)] transition-all duration-500 overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-4">
-                  Claim Your Free Trial <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform duration-300" />
+                  Reserve Your Seat<ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
                 {/* Buton içi parlama efekti */}
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />

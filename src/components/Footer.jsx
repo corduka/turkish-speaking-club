@@ -22,7 +22,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-slate-500 text-base leading-relaxed max-w-sm mx-auto md:mx-0 font-medium">
-              Master Turkish through immersive, logic-based conversation. A boutique club designed for those who value structure and fluency.
+              Master Turkish through immersive, logic-based conversation. A boutique club designed for those who value structured excellence and effortless fluency.
             </p>
             <div className="flex items-center justify-center md:justify-start gap-6 pt-4">
               {[

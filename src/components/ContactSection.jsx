@@ -51,7 +51,7 @@ export default function ContactSection() {
                 Let’s <span className="text-brand-primary italic font-serif font-light">Talk.</span>
               </h2>
               <p className="text-slate-500 text-lg mb-12 max-w-md mx-auto lg:mx-0 leading-relaxed font-medium">
-                Have a question about your level or want to discuss a custom schedule? I’m here to help you navigate your journey.
+                Have a question about your current level or a specific learning goal? I’m personally here to help you navigate your linguistic journey.
               </p>
               
               <div className="space-y-6">
@@ -104,11 +104,11 @@ export default function ContactSection() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="relative group">
                       <label className="text-[11px] font-black uppercase tracking-widest text-slate-400 mb-3 block ml-1 group-focus-within:text-brand-primary transition-colors">Your Name</label>
-                      <input required name="name" type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-slate-50/50 border border-slate-100 rounded-[1.5rem] focus:outline-none focus:ring-4 focus:ring-brand-primary/5 focus:bg-white focus:border-brand-primary transition-all font-medium text-slate-900" />
+                      <input required name="name" type="text" placeholder="James Marshall" className="w-full px-6 py-4 bg-slate-50/50 border border-slate-100 rounded-[1.5rem] focus:outline-none focus:ring-4 focus:ring-brand-primary/5 focus:bg-white focus:border-brand-primary transition-all font-medium text-slate-900" />
                     </div>
                     <div className="relative group">
                       <label className="text-[11px] font-black uppercase tracking-widest text-slate-400 mb-3 block ml-1 group-focus-within:text-brand-primary transition-colors">Email Address</label>
-                      <input required name="email" type="email" placeholder="john@example.com" className="w-full px-6 py-4 bg-slate-50/50 border border-slate-100 rounded-[1.5rem] focus:outline-none focus:ring-4 focus:ring-brand-primary/5 focus:bg-white focus:border-brand-primary transition-all font-medium text-slate-900" />
+                      <input required name="email" type="email" placeholder="jimi@example.com" className="w-full px-6 py-4 bg-slate-50/50 border border-slate-100 rounded-[1.5rem] focus:outline-none focus:ring-4 focus:ring-brand-primary/5 focus:bg-white focus:border-brand-primary transition-all font-medium text-slate-900" />
                     </div>
                   </div>
                   <div className="relative group">
