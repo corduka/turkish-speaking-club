@@ -1,16 +1,6 @@
 export const blogPosts = [
   {
     id: 1,
-    title: "The Logic of Turkish: A Developer's Perspective",
-    slug: "the-logic-of-turkish", // Bu isim .md dosyanın ismiyle birebir aynı olmalı
-    category: "Language Lab",
-    date: "March 6, 2026",
-    excerpt: "Turkish is often described as a 'mathematical' language. For someone who writes code, the suffix-based structure feels surprisingly familiar.",
-    image: "/images/blog/posts/turkish-logic.webp",
-    readTime: "5 min read"
-  },
-  {
-    id: 2,
     title: "The Secret to Perfect Menemen: Onions or No Onions?",
     slug: "perfect-menemen-recipe",
     category: "Taste of Turkey",
@@ -20,7 +10,7 @@ export const blogPosts = [
     readTime: "4 min read"
   },
   {
-    id: 3,
+    id: 2,
     title: "Must-Watch Turkish Series for Language Learners",
     slug: "best-turkish-series-2026",
     category: "Media & Books",
