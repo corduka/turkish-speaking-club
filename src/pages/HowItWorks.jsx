@@ -5,20 +5,20 @@ import { useForm } from '../context/FormContext'; // Hook'u ekle
 const steps = [
   {
     id: '01',
-    title: 'Join the Community',
-    description: 'Create your free account and tell us about your Turkish level and goals. We offer groups from A1 to B2.',
+    title: 'Submit Your Application',
+    description: 'Fill out the brief entry form. Tell me about your current level and preferred availability. No accounts, no passwords—just a direct connection to the club.',
     icon: <UserPlus className="w-8 h-8 text-brand-primary" />,
   },
   {
     id: '02',
-    title: 'Pick Your Session',
-    description: 'Choose a time slot that fits your schedule. Whether it’s a boutique group session or a private 1:1 class.',
+    title: 'Personal Placement',
+    description: 'I review every application to ensure you are matched with the right boutique group (A1-A2, B1-B2, or C1-C2) that fits your professional pace.',
     icon: <Calendar className="w-8 h-8 text-brand-primary" />,
   },
   {
     id: '03',
-    title: 'Start Speaking',
-    description: 'Jump into our virtual club via Google Meet. No textbooks, no boring grammar—just real, guided conversation.',
+    title: 'Join the Circle',
+    description: 'Once a slot opens in your designated group, you’ll receive an invitation via email with your session details and Google Meet link. Your first trial is on me.',
     icon: <MessageSquare className="w-8 h-8 text-brand-primary" />,
   },
 ];
@@ -78,7 +78,7 @@ export default function HowItWorks() {
             <h3 className="text-3xl font-bold mb-6">What to expect in every session?</h3>
             <ul className="space-y-4">
               {[
-                "Max 5 students for personal attention",
+                "Max 6 students for personal attention",
                 "Curated weekly conversation topics",
                 "Post-session feedback and vocabulary notes",
                 "A friendly, judgment-free atmosphere"
@@ -91,7 +91,7 @@ export default function HowItWorks() {
             </ul>
           </div>
           <div className="flex-1 text-center">
-            <p className="text-slate-400 mb-8 italic">"The best way to learn is to make mistakes in a safe place."</p>
+            <p className="text-slate-400 mb-8 italic">"The best way to learn is to make mistakes in a safe, guided environment."</p>
             <button 
               onClick={() => openForm('how_it_works_page')} // Hangi sayfadan açıldığını belirten bir parametre gönderebilirsin
               className="bg-brand-secondary text-brand-dark px-10 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform">
