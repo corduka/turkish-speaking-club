@@ -576,7 +576,7 @@ export default function Home() {
                 
                 <div className="space-y-6">
                   <p className="text-2xl md:text-3xl text-slate-800 font-medium leading-tight tracking-tight">
-                    "I don't just teach Turkish— <br className="hidden md:block" />
+                    "I don't just teach Turkish,<br className="hidden md:block" />
                     <span className="text-brand-primary">I deconstruct its logic.</span>"
                   </p>
                   <p className="text-slate-500 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
@@ -589,7 +589,7 @@ export default function Home() {
                     to="/about" 
                     className="inline-flex items-center gap-4 text-slate-900 font-bold text-xl group relative pb-2 overflow-hidden"
                   >
-                    <span>Learn More About My Method</span>
+                    <span>Learn More</span>
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300 text-brand-primary" />
                     <div className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-primary/20 group-hover:bg-brand-primary transition-colors duration-300" />
                   </Link>
