@@ -33,9 +33,9 @@ export default function HowItWorks() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold mb-6"
+            className="text-5xl md:text-6xl font-black mb-6 tracking-tight text-slate-900"
           >
-            How it <span className="text-brand-primary">Works</span>
+            How it <span className="text-brand-primary italic font-serif font-light">Works</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
