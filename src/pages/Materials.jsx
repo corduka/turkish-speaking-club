@@ -3,17 +3,25 @@ import { FileText, Play, Lock, Download, Star } from 'lucide-react';
 
 const resources = [
     { 
-    title: 'Şimdiki Zaman PDF Guide (Present Continuos Tense)', 
+    title: 'Present Continuos Tense Guide', 
     type: 'PDF Guide', 
     status: 'Available', 
     icon: <FileText />,
-    fileName: 'simdiki-zaman.pdf', // Dosya adını buraya ekledik
-    description: 'Present continuos tense, formula for positive and negative forms, and 20 example sentences to practice.'
+    fileName: 'simdiki-zaman.pdf', 
+    description: 'Present continuos tense, formula for positive and negative forms, and examples to practice.'
+  },
+      { 
+    title: 'Noun Cases - 6 Main Types', 
+    type: 'PDF Guide', 
+    status: 'Available', 
+    icon: <FileText />,
+    fileName: 'noun-cases.pdf',
+    description: 'These case suffixes are attached after Turkish nouns and changes the meaning.'
   },
   { 
     title: 'The 100 Most Used Turkish Verbs', 
     type: 'PDF Guide', 
-    status: 'Available', 
+    status: 'Coming Soon', 
     icon: <FileText />,
     fileName: 'simdiki-zaman.pdf', // Dosya adını buraya ekledik
     description: 'Master the core of Turkish sentences with these 100 essential verbs.'
@@ -21,33 +29,10 @@ const resources = [
   { 
     title: 'Turkish Idioms for Daily Life', 
     type: 'PDF Guide', 
-    status: 'Available', 
+    status: 'Coming Soon', 
     icon: <FileText />,
     description: 'Learn how Turks actually speak with these common metaphors.'
-  },
-  { 
-    title: 'Weekly Practice Checklist', 
-    type: 'Track-sheet', 
-    status: 'Available', 
-    icon: <Star />, 
-    fileName: 'weekly-checklist.pdf',
-    description: 'A simple habit tracker to stay consistent with your Turkish studies.'
-  },
-  { 
-    title: 'Grammar Cheat Sheet (B1)', 
-    type: 'PDF Guide', 
-    status: 'Coming Soon', 
-    icon: <Lock />,
-    description: 'A comprehensive summary of B1 level tenses and suffixes.'
-  },
-  { 
-    title: 'The "Mistake" Log', 
-    type: 'Study Template', 
-    status: 'Available', 
-    icon: <FileText />,
-    description: 'Don’t just make mistakes, learn from them. Use this template to note down and review your common errors.',
-    fileName: 'mistake-log.pdf'
-  },
+  }
 ];
 
 export default function Materials() {
@@ -62,13 +47,24 @@ export default function Materials() {
           <span className="px-4 py-1.5 bg-brand-primary/10 text-brand-primary rounded-full text-sm font-bold tracking-wide uppercase">
             Library
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4 text-slate-900">
-            Learning <span className="text-brand-primary">Resources</span>
-          </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+                  </motion.div>
+                <div className="text-center mb-20">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-6xl font-black my-6 tracking-tight text-slate-900"
+          >
+            Learning <span className="text-brand-primary italic font-serif font-light">Resources</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-slate-600 max-w-2xl mx-auto text-lg"
+          >
             Curated materials designed to bridge the gap between sessions. Download, practice, and level up.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
       </section>
 
       {/* Resource Grid */}
@@ -129,7 +125,7 @@ export default function Materials() {
     </div>
     
     <a 
-      href="https://open.spotify.com/playlist/7icpTHIIScVUmxJkHHFdXa?si=789bb18becfe4ce4" 
+      href="https://open.spotify.com/playlist/4in0Pk7krV1Qe47rN5hR7y?si=ad429f98366843ae" 
       target="_blank" 
       rel="noopener noreferrer"
       className="bg-[#1DB954] text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-3 hover:bg-[#1ed760] transition-all hover:shadow-xl hover:shadow-[#1DB954]/20 active:scale-95 whitespace-nowrap"
