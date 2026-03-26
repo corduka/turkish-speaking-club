@@ -6,16 +6,16 @@ import { Check, Globe, Wallet, ShieldCheck, Zap } from 'lucide-react';
 const pricingDetails = [
   {
     name: "Boutique Club Membership",
-    price: "99", // Örnektir, dilediğin gibi güncelleyebilirsin
+    price: "80", // Örnektir, dilediğin gibi güncelleyebilirsin
     period: "/ month",
     description: "Ideal for heritage learners and partners looking for consistent practice.",
     features: [
-      "2 Free Trial Sessions",
-      "Weekly Boutique Group Sessions (Max 5)",
+      "8 Sessions Per Month (2 Hours Weekly)",
+      "Intimate Groups (Strictly Max 6 Members)",
       "Structured Monthly Learning Plan",
-      "Access to Personal Feedback Notes",
-      "Direct WhatsApp Support",
-      "Cancel Anytime"
+      "Personal Post-Session Digest & Feedback",
+      "Direct WhatsApp Support for Questions",
+      "Cancel Anytime - No Commitment"
     ],
     highlight: true
   }
@@ -24,7 +24,7 @@ const pricingDetails = [
 const paymentMethods = [
   { name: "Global", icons: "PayPal / Stripe / Wise", desc: "Easy international transfers" },
   { name: "Latin America", icons: "Nequi (Colombia)", desc: "Local payment for LatAm students" },
-  { name: "Professional", icons: "Payoneer / Payoneer Card", desc: "Flexible for business transfers" },
+  { name: "Professional", icons: "Payoneer", desc: "Flexible for business transfers" },
   { name: "Turkey", icons: "All Major Bank Accounts", desc: "Direct EFT/Havale options" }
 ];
 
@@ -86,8 +86,11 @@ export default function Membership() {
               onClick={() => openForm('membership_page_main')}
               className="w-full bg-brand-primary text-white py-6 rounded-2xl font-bold text-xl hover:bg-brand-dark transition-all shadow-lg shadow-brand-primary/20 flex items-center justify-center gap-3 group"
             >
-              <Zap className="w-6 h-6 fill-current" /> Join the Club & Get 2 Free Sessions
+              <Zap className="w-6 h-6 fill-current" /> Claim Your Free Trial Session
             </button>
+                          <p className="text-slate-500 text-xs mt-5 px-1 italic">
+                Payment only begins if you decide to continue after your first experience.
+              </p>
           </motion.div>
 
           {/* 2. ÖDEME YÖNTEMLERİ (1/3 Genişlik) */}
@@ -115,7 +118,7 @@ export default function Membership() {
               <ShieldCheck className="w-10 h-10 text-emerald-500 mb-4" />
               <h4 className="font-bold text-lg mb-2">Secure Enrollment</h4>
               <p className="text-slate-500 text-sm leading-relaxed">
-                We use industry-standard encryption. Your first 2 sessions are a risk-free trial. Payment only begins when you decide to continue.
+                I believe in the quality of my logic-based method. Your journey starts with a 100% free trial session. No payment is required upfront. You only subscribe once you see the results for yourself.
               </p>
             </div>
           </motion.div>
