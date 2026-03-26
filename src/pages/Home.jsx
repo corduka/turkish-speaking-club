@@ -8,6 +8,7 @@ import {
   Users2, LineChart, X, Star, Sparkles,ShieldCheck, Brain, ZapOff, MessageSquareOff, Timer, Globe, ArrowUpRight 
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import FAQItem from '../components/FAQItem';
 
 // Bileşenler ve Assetler
 import ContactSection from '../components/ContactSection';
@@ -49,34 +50,14 @@ const testimonials = [
   { id: 3, name: "Valentina R.", text: "The classes are super clear and organized. Something I love is that he also knows Spanish, which adds a huge plus for me.", status: "Verified Review", img: testimonial3 }
 ];
 
-const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className="border-b border-slate-100">
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-6 flex justify-between items-center text-left hover:text-brand-primary transition-colors group"
-      >
-        <span className="font-bold text-slate-800 text-lg group-hover:text-brand-primary">{question}</span>
-        {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-      </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden"
-          >
-            <div className="pb-6 text-slate-500 leading-relaxed text-base">
-              {answer}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
+// Common Questions
+const homeFAQs = [
+        { q: "Is it beginner friendly?", a: "Absolutely. I have dedicated 'First Steps' groups starting from A1 level, designed to build your foundation through natural conversation from day one." },
+        { q: "How many students in a group?", a: "To ensure the highest quality of interaction, I strictly cap sessions at 4–6 students. This boutique approach is what makes the progress so rapid." },
+        { q: "What if I miss a session?", a: "Life happens. While live participation is best, you'll receive detailed logic-based notes and summary of the session to keep you on track." },
+        { q: "Is there homework?", a: "We replace repetitive drills with Pre-Session Briefings. Instead of worksheets, you’ll receive curated insights, short videos, or thought-provoking prompts designed to prime your mind for the next conversation." }
+];
+
 
 export default function Home() {
   const { openForm } = useForm();
@@ -620,39 +601,22 @@ export default function Home() {
         </section>
 
 {/* 10. COMMON QUESTIONS - REFINED & ELEGANT */}
-        <section className="py-40 bg-white">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
-                Common <span className="text-brand-primary italic font-serif font-light">Questions</span>
-              </h2>
-              <p className="mt-4 text-slate-400 font-medium tracking-widest uppercase text-[10px]">Everything you need to know</p>
-            </div>
-            
-            <div className="space-y-4">
-              {[
-                { q: "Is it beginner friendly?", a: "Absolutely. I have dedicated 'First Steps' groups starting from A1 level, designed to build your foundation through natural conversation from day one." },
-                { q: "How many students in a group?", a: "To ensure the highest quality of interaction, I strictly cap sessions at 4–6 students. This boutique approach is what makes the progress so rapid." },
-                { q: "What if I miss a session?", a: "Life happens. While live participation is best, you'll receive detailed logic-based notes and summary of the session to keep you on track." },
-                { q: "Is there homework?", a: "We replace repetitive drills with Pre-Session Briefings. Instead of worksheets, you’ll receive curated insights, short videos, or thought-provoking prompts designed to prime your mind for the next conversation." }
-              ].map((item, i) => (
-                <div key={i} className="group border-b border-slate-100 last:border-0">
-                  <FAQItem question={item.q} answer={item.a} />
-                </div>
-              ))}
-            </div>
-            {/* FAQ Listesinin hemen altına, boşluktan sonra ekle */}
-            <div className="mt-20 text-center">
-              <Link 
-                to="/faq" 
-                className="inline-flex items-center gap-2 text-slate-400 hover:text-brand-primary font-bold text-xs uppercase tracking-[0.2em] transition-all group"
-              >
-                <span>View All Frequently Asked Questions</span>
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </Link>
-            </div>
-          </div>
-        </section>
+<section className="py-40 bg-white">
+  <div className="max-w-4xl mx-auto px-6">
+    {/* Başlık Grubu */}
+    <div className="text-center mb-24">
+      <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
+        Common <span className="text-brand-primary italic font-serif font-light">Questions</span>
+      </h2>
+      <p className="mt-4 text-slate-400 font-medium tracking-widest uppercase text-[10px]">
+        Everything you need to know
+      </p>
+    </div>
+    
+    {/* Yeni Akıllı Bileşenimiz: Tüm döngü, link ve kapanma mantığı içeride */}
+    <FAQItem items={homeFAQs} />
+  </div>
+</section>
 
 {/* 11. FINAL CTA - THE MASTERCLASS FINISH */}
         <section className="py-60 relative overflow-hidden">
