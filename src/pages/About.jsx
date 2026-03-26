@@ -2,15 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from '../context/FormContext';
 import { 
-  Code2, 
-  LineChart, 
   GraduationCap, 
   Globe2, 
   Languages, 
   ArrowRight,
-  Sparkles
+  Sparkles,
+  Heart,
+  Anchor,
+  CloudLightning
 } from 'lucide-react';
-import mainProfile from "../assets/main-profile.webp"; // Mevcut profil fotoğrafın
+import mainProfile from "../assets/main-profile.webp";
 
 export default function About() {
   const { openForm } = useForm();
@@ -29,140 +30,160 @@ export default function About() {
   };
 
   return (
-    <main className="pt-32 pb-20 px-6 bg-white min-h-screen">
+    <main className="pt-40 pb-20 px-6 bg-white min-h-screen font-sans">
       <div className="max-w-7xl mx-auto">
         
-        {/* Başlık Bölümü */}
-        <div className="mb-16 text-center md:text-left">
-          <motion.h1 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-4xl md:text-6xl font-bold mb-4"
+        {/* 1. HERO SECTION - Editorial Style */}
+        <div className="mb-24 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] mb-8"
           >
-            Meet the <span className="text-brand-primary italic">Architect</span> <br /> 
-            Behind the Method.
+            <Anchor className="w-3 h-3" /> From Izmir, Türkiye to Bogotá, Colombia
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-6xl md:text-8xl font-black mb-8 tracking-tighter text-slate-900"
+          >
+            Meet <span className="text-brand-primary italic font-serif font-light text-7xl md:text-9xl">Abdullah.</span>
           </motion.h1>
-          <p className="text-slate-500 text-lg max-w-2xl">
-            I don't just teach Turkish; I decode it. Combining my background in Economics and Software Engineering to offer a structured, logical approach to language.
+          <p className="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium">
+            A linguist by heart, a polyglot by choice, and a mentor by mission. <br />
+            <span className="text-slate-900 italic font-serif">"I don't just teach a language; I build bridges between lives."</span>
           </p>
         </div>
 
-        {/* BENTO GRID */}
+        {/* 2. BENTO GRID - Premium Layout */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 h-full md:h-[900px]"
+          className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-6 h-full md:h-[1000px]"
         >
           
-          {/* 1. VİDEO KUTUSU (Büyük - 2x2) */}
+          {/* A. PERSONAL JOURNEY (2x2) - The Emotional Core */}
           <motion.div 
             variants={itemVariants}
-            className="md:col-span-2 md:row-span-2 bg-slate-900 rounded-[2.5rem] overflow-hidden relative group shadow-2xl"
+            className="md:col-span-2 md:row-span-2 bg-slate-900 rounded-[3.5rem] p-12 flex flex-col justify-end relative overflow-hidden group shadow-2xl shadow-slate-200"
           >
-            <iframe 
-              className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-              src="https://www.youtube.com/embed/Qt9UWVsWeyI?si=5s-xAMMtdW_rSJ0l" 
-              title="About Abdullah"
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowFullScreen
-            ></iframe>
-          </motion.div>
-
-          {/* 2. EKONOMİ & ANALİTİK (1x1) */}
-          <motion.div 
-            variants={itemVariants}
-            className="bg-brand-primary/5 border border-brand-primary/10 rounded-[2.5rem] p-8 flex flex-col justify-between hover:bg-brand-primary/10 transition-colors"
-          >
-            <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-4">
-              <LineChart className="text-brand-primary w-6 h-6" />
-            </div>
-            <div>
-              <h3 className="font-bold text-xl mb-2">Economics Mindset</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Applying structural analysis to grammar. I prioritize efficiency and clear patterns over rote memorization.
+             {/* Arka plan görseli veya çok hafif bir degrade */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent z-10" />
+            <img 
+              src={mainProfile} 
+              alt="Abdullah in Colombia" 
+              className="absolute inset-0 w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
+            />
+            
+            <div className="relative z-20">
+              <div className="flex items-center gap-3 mb-6">
+                <Heart className="text-brand-primary w-6 h-6 fill-brand-primary" />
+                <span className="text-brand-primary font-black uppercase tracking-[0.2em] text-xs">The Human Connection</span>
+              </div>
+              <h3 className="text-4xl font-black text-white mb-6 leading-tight">Living the <br /> Immigrant Story.</h3>
+              <p className="text-slate-300 text-lg leading-relaxed font-medium">
+                Living in Colombia and being married to a foreigner taught me one thing: language isn't about grammar; it's about survival and belonging. I know the frustration of silence and the joy of finally being understood.
               </p>
             </div>
           </motion.div>
 
-          {/* 3. SOFTWARE DEV (1x1) */}
+          {/* B. ACADEMIC EXCELLENCE (1x1) */}
           <motion.div 
             variants={itemVariants}
-            className="bg-slate-50 border border-slate-100 rounded-[2.5rem] p-8 flex flex-col justify-between hover:border-brand-primary/30 transition-all"
+            className="bg-brand-primary/5 border border-brand-primary/10 rounded-[3rem] p-10 flex flex-col justify-between group hover:bg-brand-primary transition-all duration-500"
           >
-            <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-4">
-              <Code2 className="text-brand-secondary w-6 h-6" />
+            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-4 group-hover:rotate-12 transition-transform">
+              <GraduationCap className="text-brand-primary w-7 h-7" />
             </div>
             <div>
-              <h3 className="font-bold text-xl mb-2">Dev Logic</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Think of Turkish as a perfectly designed system. I help you understand the 'code' so you can build your own sentences.
+              <h3 className="font-black text-2xl mb-3 group-hover:text-white transition-colors">Academic Honor</h3>
+              <p className="text-slate-500 text-sm leading-relaxed group-hover:text-white/80 transition-colors">
+                Bachelor's in Turkish Language and Literature with Honors. My expertise is rooted in the soul of the language.
               </p>
             </div>
           </motion.div>
 
-          {/* 4. İSPANYOLCA KÖPRÜSÜ (Büyük Yatay - 2x1) */}
+          {/* C. THE POLYGLOT (1x1) */}
           <motion.div 
             variants={itemVariants}
-            className="md:col-span-2 bg-brand-dark text-white rounded-[2.5rem] p-10 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group"
+            className="bg-slate-50 border border-slate-100 rounded-[3rem] p-10 flex flex-col justify-between hover:border-brand-primary/30 transition-all"
+          >
+            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-4">
+              <Languages className="text-brand-secondary w-7 h-7" />
+            </div>
+            <div>
+              <h3 className="font-black text-2xl mb-3 text-slate-900">Multilingual Mind</h3>
+              <p className="text-slate-500 text-sm leading-relaxed font-medium">
+                Fluent in English, Spanish, and Portuguese. I decode Turkish using patterns you already know in your own tongue.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* D. 10+ YEARS EXPERIENCE (2x1) */}
+          <motion.div 
+            variants={itemVariants}
+            className="md:col-span-2 bg-white border-2 border-slate-50 rounded-[3.5rem] p-12 flex items-center justify-between relative overflow-hidden"
           >
             <div className="relative z-10 flex-1">
-              <div className="flex items-center gap-2 text-brand-secondary font-bold mb-4">
-                <Languages className="w-5 h-5" /> 
-                <span>Hablas Español?</span>
+              <div className="flex items-center gap-2 text-brand-primary font-black mb-6">
+                <CloudLightning className="w-5 h-5 fill-brand-primary" /> 
+                <span className="uppercase tracking-[0.2em] text-[10px]">A Decade of Excellence</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4">A Bridge Between Cultures</h3>
-              <p className="text-indigo-100/70 text-sm leading-relaxed">
-                Knowing Spanish allows me to explain Turkish nuances through a lens you already understand. No more "lost in translation" moments.
+              <h3 className="text-3xl font-black mb-4 text-slate-900 tracking-tight">10+ Years of Mastery.</h3>
+              <p className="text-slate-500 text-base leading-relaxed max-w-sm">
+                From classroom intensity to 100% online mentorship since 2020. I've refined a digital-first method that works anywhere in the world.
               </p>
             </div>
-            <div className="text-6xl md:text-8xl font-black text-white/5 absolute -right-4 -bottom-4 rotate-12 group-hover:rotate-0 transition-transform duration-700">
-              HOLA
+            <div className="text-[12rem] font-black text-slate-50 absolute -right-4 -bottom-10 select-none">
+              10
             </div>
           </motion.div>
 
-          {/* 5. İSTATİSTİKLER (1x1) */}
+          {/* E. EXPERIENCE STATS (1x1) */}
           <motion.div 
             variants={itemVariants}
-            className="bg-white border-2 border-slate-50 rounded-[2.5rem] p-8 flex flex-col justify-center items-center text-center shadow-sm"
+            className="bg-brand-secondary text-white rounded-[3rem] p-10 flex flex-col justify-center items-center text-center shadow-xl shadow-brand-secondary/20"
           >
-            <div className="text-4xl font-black text-brand-primary mb-2">10+</div>
-            <div className="text-slate-400 uppercase tracking-widest text-[10px] font-bold">Years of Experience</div>
-            <div className="h-px w-12 bg-slate-100 my-4"></div>
-            <div className="text-4xl font-black text-brand-primary mb-2">500+</div>
-            <div className="text-slate-400 uppercase tracking-widest text-[10px] font-bold">Global Students</div>
+            <div className="text-5xl font-black mb-2 tracking-tighter">500+</div>
+            <div className="text-white/60 uppercase tracking-[0.2em] text-[10px] font-black">Success Stories</div>
+            <div className="h-px w-12 bg-white/20 my-6"></div>
+            <div className="text-sm font-bold italic font-serif">Global Reach</div>
           </motion.div>
 
-          {/* 6. FOTOĞRAF VE CTA (1x1) */}
+          {/* F. CTA KUTUSU (1x1) */}
           <motion.div 
             variants={itemVariants}
-            className="bg-brand-secondary/10 rounded-[2.5rem] p-6 flex flex-col justify-between relative overflow-hidden group"
+            className="bg-slate-900 rounded-[3rem] p-8 flex flex-col justify-between relative overflow-hidden group"
           >
-             <div className="flex items-center gap-3">
-                <img src={mainProfile} alt="Abdullah" className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-md" />
-                <span className="font-bold text-slate-800 text-sm tracking-tight">Let's start your journey.</span>
+             <div className="relative z-10">
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-primary mb-2 block">Next Step</span>
+                <h4 className="text-white font-black text-lg leading-tight">Ready to start your Turkish journey?</h4>
              </div>
              <button 
-              onClick={() => openForm('about_page_bento')}
-              className="w-full bg-white text-brand-primary py-4 rounded-2xl font-bold text-sm shadow-sm hover:bg-brand-primary hover:text-white transition-all flex items-center justify-center gap-2 group/btn"
+              onClick={() => openForm('about_page_cta')}
+              className="w-full bg-brand-primary text-white py-5 rounded-[1.5rem] font-black text-xs uppercase tracking-widest shadow-lg hover:bg-white hover:text-slate-900 transition-all flex items-center justify-center gap-2 group/btn relative z-10"
              >
-                Apply Now <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                Book Your Call <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
              </button>
           </motion.div>
 
         </motion.div>
 
-        {/* ALT METİN / VİZYON */}
+        {/* 3. VIZYON / QUOTE */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="mt-24 max-w-3xl mx-auto text-center"
+          viewport={{ once: true }}
+          className="mt-40 max-w-4xl mx-auto text-center"
         >
-          <Sparkles className="w-8 h-8 text-brand-secondary mx-auto mb-6" />
-          <h2 className="text-3xl font-bold mb-6">Teaching is an Art, Learning is a Strategy.</h2>
-          <p className="text-slate-600 leading-relaxed text-lg">
-            "My goal isn't just to help you 'survive' in Turkish. I want you to feel the rhythm of the language, understand its structural beauty, and express your true self without hesitation. Join us, and let's build your fluency together."
+          <Sparkles className="w-10 h-10 text-brand-primary mx-auto mb-10 opacity-30" />
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight tracking-tighter">
+            Teaching is an Art, <br /> 
+            <span className="text-brand-primary italic font-serif font-light">Belonging is the Strategy.</span>
+          </h2>
+          <p className="text-slate-500 leading-relaxed text-xl font-medium">
+            "My mission is to eliminate the 'outsider' feeling. Whether it's for your spouse, your new life in Turkey, or your career, I provide the linguistic keys to a world you've already started to build. Let's make it official."
           </p>
         </motion.div>
 
