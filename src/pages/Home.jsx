@@ -121,7 +121,7 @@ export default function Home() {
               className="flex-1 w-full max-w-[650px] relative"
             >
               <div className="absolute -inset-4 bg-brand-primary/10 rounded-[4rem] rotate-3 blur-2xl -z-10" />
-              <div className="aspect-[4/3] bg-slate-100 rounded-[3.5rem] overflow-hidden shadow-2xl border-[12px] border-white relative group">
+              <div className="aspect-[4/3] bg-slate-100 rounded-[3.5rem] overflow-hidden shadow-2xl border-[10px] border-brand-primary relative group">
                 <img src={heroImg} alt="Turkish speaking club" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
             </motion.div>
