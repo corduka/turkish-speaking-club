@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from '../context/FormContext';
-import { Check, Wallet, ShieldCheck, Zap, ArrowRight, MessageCircle } from 'lucide-react';
+import { Check, Wallet, ShieldCheck, Zap, ArrowRight, ArrowUpRight, MessageCircle } from 'lucide-react';
 import FAQItem from '../components/FAQItem';
-
+import { Link } from 'react-router-dom';
 
 const pricingDetails = {
   name: "Boutique Club Membership",
@@ -156,7 +156,16 @@ export default function Membership() {
     
     {/* İşte buraya ekliyoruz! Artık döngü ve link bu bileşenin içinde */}
     <FAQItem items={membershipFAQs} />
-    
+          {/* İstediğin "View All" Linki */}
+      <div className="mt-20 text-center">
+        <Link 
+          to="/FAQ" 
+          className="inline-flex items-center gap-2 text-slate-400 hover:text-brand-primary font-bold text-xs uppercase tracking-[0.2em] transition-all group"
+        >
+          <span>View All Frequently Asked Questions</span>
+          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        </Link>
+      </div>
   </div>
 </section>
 
@@ -167,7 +176,7 @@ export default function Membership() {
             <a 
               href="https://wa.me/00573219372828" 
               target="_blank" 
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 text-brand-primary font-black uppercase text-xs tracking-widest hover:opacity-80 transition-all"
             >
               <MessageCircle className="w-4 h-4 fill-current" /> Chat on WhatsApp

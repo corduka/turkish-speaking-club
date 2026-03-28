@@ -528,14 +528,14 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 9. MEET ABDULLAH - EDITORIAL DESIGN */}
+        {/* 9. MEET ABDULLAH - EDITORIAL DESIGN 
         <section className="py-48 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col lg:flex-row items-center gap-24">
               
-              {/* Image Side with Decorative Elements */}
+              
               <div className="relative shrink-0 order-2 lg:order-1">
-                {/* Arka plandaki büyük dekoratif 'A' harfi veya şekil */}
+              
                 <div className="absolute -top-20 -left-20 text-[20rem] font-serif italic text-slate-50 select-none -z-10 opacity-50">
                   A
                 </div>
@@ -549,7 +549,7 @@ export default function Home() {
                     />
                   </div>
                   
-                  {/* Floating Badge on Image */}
+                  
                   <div className="absolute -bottom-6 -right-10 bg-white p-6 rounded-[2.5rem] shadow-2xl border border-slate-50 hidden md:block">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-2xl bg-brand-secondary/10 flex items-center justify-center text-brand-secondary">
@@ -564,7 +564,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Text Side */}
+              
               <div className="flex-1 space-y-10 order-1 lg:order-2 text-center lg:text-left">
                 <div className="space-y-4">
                   <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter leading-none">
@@ -599,6 +599,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        */}
 
 {/* 10. COMMON QUESTIONS - REFINED & ELEGANT */}
 <section className="py-40 bg-white">
@@ -615,6 +616,16 @@ export default function Home() {
     
     {/* Yeni Akıllı Bileşenimiz: Tüm döngü, link ve kapanma mantığı içeride */}
     <FAQItem items={homeFAQs} />
+          {/* İstediğin "View All" Linki */}
+      <div className="mt-20 text-center">
+        <Link 
+          to="/faq" 
+          className="inline-flex items-center gap-2 text-slate-400 hover:text-brand-primary font-bold text-xs uppercase tracking-[0.2em] transition-all group"
+        >
+          <span>View All Frequently Asked Questions</span>
+          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        </Link>
+      </div>
   </div>
 </section>
 

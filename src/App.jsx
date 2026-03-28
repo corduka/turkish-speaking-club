@@ -43,7 +43,7 @@ function App() {
             <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/terms-and-privacy" element={<TermsPrivacy />} />
-            <Route path="/frequently-asked-questions" element={<FAQ />} />
+            <Route path="/FAQ" element={<FAQ />} />
           </Routes>
         </main>
         <FormModal /> {/* Form artık burada tek merkezde duruyor */}

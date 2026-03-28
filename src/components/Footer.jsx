@@ -69,9 +69,9 @@ export default function Footer() {
               <h4 className="font-black text-white uppercase tracking-[0.2em] text-[10px] opacity-50">Support</h4>
               <ul className="space-y-5 text-[13px] font-bold tracking-tight text-center md:text-left">
                 <li><Link to="/about" className="hover:text-brand-primary transition-colors">Meet Abdullah</Link></li>
-                <li><Link to="/frequently-asked-questions" className="hover:text-brand-primary transition-colors">FAQs</Link></li>
+                <li><Link to="/FAQ" className="hover:text-brand-primary transition-colors">FAQs</Link></li>
                 <li className="flex justify-center md:justify-start">
-                  <a href="https://wa.me/00573219372828" target="_blank" className="hover:text-brand-primary transition-colors">WhatsApp Support</a>
+                  <a href="https://wa.me/00573219372828" target="_blank" rel="noopener noreferrer" className="hover:text-brand-primary transition-colors">WhatsApp Support</a>
                 </li>
                 <li><Link to="/terms-and-privacy" className="text-slate-700 hover:text-slate-500 transition-colors">Privacy Policy</Link></li>
               </ul>
