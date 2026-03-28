@@ -6,7 +6,7 @@ import {
   CreditCard, 
   MessageCircle,
   ArrowRight,
-  Sparkles
+  Sparkles, Mail
 } from 'lucide-react';
 import FAQItem from '../components/FAQItem';
 
@@ -101,7 +101,9 @@ export default function FAQPage() {
                 <a href="https://wa.me/00573219372828" target="_blank" rel="noopener noreferrer">WhatsApp Support</a> <ArrowRight className="w-4 h-4" />
               </button>
               <button className="w-full md:w-auto bg-white/5 text-white border border-white/10 px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white/10 transition-all">
-                Send an Email
+                              <a href="mailto:cordukabdullah@gmail.com">
+                  Send an Email
+                </a>
               </button>
             </div>
           </div>
