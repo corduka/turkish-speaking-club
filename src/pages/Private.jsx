@@ -89,12 +89,12 @@ export default function Private() {
             
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="flex-1 relative">
                 <div className="absolute -inset-6 bg-brand-primary/5 rounded-[5rem] -rotate-2"></div>
-                <div className="relative bg-white rounded-[4rem] overflow-hidden border-[12px] border-white shadow-2xl">
+                <div className="relative bg-white rounded-[4rem] overflow-hidden border-[10px] border-brand-primary shadow-2xl">
                     <img src={mainProfile} alt="Abdullah - Turkish Coach" className="w-full h-auto grayscale-[20%] hover:grayscale-0 transition-all duration-700" />
                     <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/80 backdrop-blur-xl rounded-3xl border border-white/50">
                         <div className="flex items-center gap-3">
                             <div className="w-2.5 h-2.5 bg-brand-primary rounded-full animate-pulse"></div>
-                            <span className="text-xs font-black text-slate-800 uppercase tracking-widest">Only 2 Private Slots for March</span>
+                            <span className="text-xs font-black text-slate-800 uppercase tracking-widest">Only 2 Private Slots for April</span>
                         </div>
                     </div>
                 </div>
