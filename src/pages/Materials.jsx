@@ -24,7 +24,15 @@ const resources = [
     status: 'Coming Soon', 
     icon: <FileText />,
     fileName: 'simdiki-zaman.pdf', // Dosya adını buraya ekledik
-    description: 'Master the core of Turkish sentences with these 100 essential verbs.'
+    description: 'Şimdiki zaman'
+  },
+    { 
+    title: 'Bana / Sana - Beni / Seni : Accusative Case & Dative Case Explained', 
+    type: 'PDF Guide', 
+    status: 'Available', 
+    icon: <FileText />,
+    fileName: 'beniseni-banasana.pdf', // Dosya adını buraya ekledik
+    description: 'Accusative case (belirtme durumu) and dative case (yönelme durumu) are two of the six main noun cases in Turkish. They are used to indicate the direct object of a verb and the indirect object or direction of an action, respectively.'
   },
   { 
     title: 'Turkish Idioms for Daily Life', 
