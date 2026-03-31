@@ -25,7 +25,6 @@ const handleCTAStats = () => {
     cta_location: 'hero_section',
     button_text: 'Book Strategy Call'
   });
-  se
 
 //Section 2: hareketli rakamlar
 const AnimatedNumber = ({ value }) => {
