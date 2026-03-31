@@ -163,7 +163,7 @@ export default function Private() {
                          alt="Marcus" 
                        />
                        <div>
-                          <p className="text-xs font-black uppercase tracking-widest text-brand-primary leading-none mb-1">MARCUS</p>
+                          <p className="text-xs font-black uppercase tracking-widest text-brand-primary leading-none mb-1">Dennis</p>
                           <p className="text-[9px] font-bold text-white/40 uppercase tracking-widest">Expat in Istanbul</p>
                        </div>
                     </div>
