@@ -17,6 +17,8 @@ import mainProfile from "../assets/main-profile.webp";
 import testimonial1 from "../assets/testimonial-1.webp";
 import testimonial2 from "../assets/testimonial-2.webp";
 import testimonial3 from "../assets/testimonial-3.webp";
+// Merkezi Form Hook'u
+import { useForm } from '../context/FormContext';
 
 //GTM
 const handleCTAStats = () => {
@@ -25,7 +27,7 @@ const handleCTAStats = () => {
     cta_location: 'hero_section',
     button_text: 'Book Strategy Call'
   });
-
+};
 //Section 2: hareketli rakamlar
 const AnimatedNumber = ({ value }) => {
   const count = useMotionValue(0);
@@ -48,10 +50,6 @@ const AnimatedNumber = ({ value }) => {
   return <motion.span ref={ref}>{rounded}</motion.span>;
 };
 
-
-// Merkezi Form Hook'u
-import { useForm } from '../context/FormContext';
-
 const testimonials = [
   { id: 1, name: "Matthew P.", text: "Abdullah is a fantastic teacher. He's very engaging and meets you at your skill level while also challenging you to meet your goals.", status: "Verified Review", img: testimonial1 },
   { id: 2, name: "Karina G.", text: "The boutique group sessions are exactly what I needed. Abdullah explains the 'why' behind the language, not just the 'how'.", status: "Verified Review", img: testimonial2 },
@@ -65,7 +63,6 @@ const homeFAQs = [
         { q: "What if I miss a session?", a: "Life happens. While live participation is best, you'll receive detailed logic-based notes and summary of the session to keep you on track." },
         { q: "Is there homework?", a: "We replace repetitive drills with Pre-Session Briefings. Instead of worksheets, you’ll receive curated insights, short videos, or thought-provoking prompts designed to prime your mind for the next conversation." }
 ];
-
 
 export default function Home() {
   const { openForm } = useForm();
