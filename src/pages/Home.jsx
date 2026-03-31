@@ -616,13 +616,13 @@ export default function Home() {
     
     {/* Yeni Akıllı Bileşenimiz: Tüm döngü, link ve kapanma mantığı içeride */}
     <FAQItem items={homeFAQs} />
-          {/* İstediğin "View All" Linki */}
+          {/* "View All" Linki */}
       <div className="mt-20 text-center">
         <Link 
           to="/faq" 
           className="inline-flex items-center gap-2 text-slate-400 hover:text-brand-primary font-bold text-xs uppercase tracking-[0.2em] transition-all group"
         >
-          <span>View All Frequently Asked Questions</span>
+          <span className="border-b border-transparent group-hover:border-brand-primary pb-1">View All Frequently Asked Questions</span>
           <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </Link>
       </div>

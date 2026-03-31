@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Zap, Check, Crown, Star, MessageCircle, ShieldCheck, Sparkles, Heart, MapPin, Quote, ExternalLink
+  ArrowRight, Zap, Check, Crown, Star, MessageCircle, ShieldCheck, Sparkles, Heart, ArrowUpRight, MapPin, Quote, ExternalLink
 } from 'lucide-react';
 import { PopupModal } from 'react-calendly';
 import mainProfile from "../assets/main-profile.webp";
 import FAQItem from '../components/FAQItem';
+import { Link } from 'react-router-dom';
 
 const nicheScenarios = [
   {
@@ -52,6 +53,14 @@ const testimonials = [
   }
 ];
 
+// Common Questions
+const privateFAQs = [
+              { q: "How flexible is the scheduling?", a: "Extremely. I work with students across all timezones. We set a consistent weekly slot, but you can reschedule with 12-hour notice." },
+              { q: "Do I need to buy any books?", a: "No. I provide all custom-built digital materials, logic maps, and session notes. You only need a laptop or phone and a desire to speak." },
+              { q: "What is a '4-Session Block'?", a: "To ensure progress, we book lessons in blocks of 4. This creates a rhythm and allows us to track your growth effectively month by month." },
+              { q: "Can I switch to a Group Session later?", a: "Yes. Many private students eventually join the Club once they build their confidence in 1:1 sessions." }
+];
+
 export default function Private() {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
 
@@ -63,7 +72,6 @@ export default function Private() {
         open={isCalendlyOpen}
         rootElement={document.getElementById('root')}
       />
-
       <div className="pt-32 pb-20 bg-white overflow-x-hidden font-sans">
         {/* 1. HERO SECTION */}
         <section className="max-w-7xl mx-auto px-6 mb-40">
@@ -278,21 +286,41 @@ export default function Private() {
           </div>
         </section>
 
-        {/* 6. FAQ SECTION */}
-        <section className="py-40 max-w-4xl mx-auto px-6">
-          <div className="text-center mb-24">
-            <h2 className="text-4xl font-black text-slate-900 tracking-tight">Common <span className="text-brand-primary italic font-serif font-light">Questions</span></h2>
-            <p className="mt-4 text-slate-400 font-black tracking-widest uppercase text-[10px]">Private Coaching Details</p>
-          </div>
-          <FAQItem 
-            items={[
-              { q: "How flexible is the scheduling?", a: "Extremely. I work with students across all timezones. We set a consistent weekly slot, but you can reschedule with 12-hour notice." },
-              { q: "Do I need to buy any books?", a: "No. I provide all custom-built digital materials, logic maps, and session notes. You only need a laptop or phone and a desire to speak." },
-              { q: "What is a '4-Session Block'?", a: "To ensure progress, we book lessons in blocks of 4. This creates a rhythm and allows us to track your growth effectively month by month." },
-              { q: "Can I switch to a Group Session later?", a: "Yes. Many private students eventually join the Club once they build their confidence in 1:1 sessions." }
-            ]}
-          />
-        </section>
+{/* 6. COMMON QUESTIONS - REFINED & ELEGANT */}
+<section className="py-40 bg-white border-t border-slate-50">
+  <div className="max-w-4xl mx-auto px-6">
+    {/* Başlık Grubu */}
+    <div className="text-center mb-24">
+      <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
+        Curated <span className="text-brand-primary italic font-serif font-light"> Inquiries</span>
+      </h2>
+      <p className="mt-4 text-slate-400 font-medium tracking-widest uppercase text-[10px]">
+        Detailed insights into the logic-based private experience.
+      </p>
+    </div>
+    
+    {/* FAQ Bileşeni */}
+    <FAQItem items={privateFAQs} />
+
+    {/* View All Linki - Premium Stil */}
+    <motion.div 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className="mt-20 text-center"
+    >
+      <Link 
+        to="/faq" 
+        className="inline-flex items-center gap-3 text-slate-400 hover:text-brand-primary font-black text-[11px] uppercase tracking-[0.3em] transition-all group"
+      >
+        <span className="border-b border-transparent group-hover:border-brand-primary pb-1">
+          View All Frequently Asked Questions
+        </span>
+        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+      </Link>
+    </motion.div>
+  </div>
+</section>
       </div>
     </>
   );

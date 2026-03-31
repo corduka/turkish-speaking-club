@@ -6,7 +6,8 @@ import {
   CreditCard, 
   MessageCircle,
   ArrowRight,
-  Sparkles, Mail
+  Sparkles, 
+  UserCheck
 } from 'lucide-react';
 import FAQItem from '../components/FAQItem';
 
@@ -15,6 +16,13 @@ const learningFAQs = [
   { q: "How many students in a group?", a: "To ensure the highest quality of interaction, I strictly cap sessions at 4–6 students. This boutique approach is what makes the progress so rapid." },
   { q: "What if I miss a session?", a: "Life happens. While live participation is best, you'll receive detailed logic-based notes and summary of the session to keep you on track." },
   { q: "Is there homework?", a: "We replace repetitive drills with Pre-Session Briefings. Instead of worksheets, you’ll receive curated insights, short videos, or thought-provoking prompts designed to prime your mind for the next conversation." }
+];
+
+const privateFAQs = [
+  { q: "How flexible is the scheduling?", a: "Extremely. I work with students across all timezones. We set a consistent weekly slot, but you can reschedule with 12-hour notice." },
+  { q: "Do I need to buy any books?", a: "No. I provide all custom-built digital materials, logic maps, and session notes. You only need a laptop or phone and a desire to speak." },
+  { q: "What is a '4-Session Block'?", a: "To ensure progress, we book lessons in blocks of 4. This creates a rhythm and allows us to track your growth effectively month by month." },
+  { q: "Can I switch to a Group Session later?", a: "Yes. Many private students eventually join the Club once they build their confidence in 1:1 sessions." }
 ];
 
 const membershipFAQs = [
@@ -50,7 +58,7 @@ export default function FAQPage() {
           </p>
         </div>
 
-        {/* 2. CATEGORY: THE EXPERIENCE */}
+        {/* 2. CATEGORY: THE EXPERIENCE (Group) */}
         <section className="mb-24">
           <div className="flex items-center gap-4 mb-12 border-b border-slate-100 pb-6">
             <div className="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center shadow-lg">
@@ -58,34 +66,47 @@ export default function FAQPage() {
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 tracking-tight">The Learning Experience</h2>
-              <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Methodology & Dynamics</p>
+              <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Methodology & Group Dynamics</p>
             </div>
           </div>
           <FAQItem items={learningFAQs} />
         </section>
 
-        {/* 3. CATEGORY: MEMBERSHIP */}
+        {/* 3. CATEGORY: PRIVATE MENTORSHIP (YENİ) */}
+        <section className="mb-24">
+          <div className="flex items-center gap-4 mb-12 border-b border-slate-100 pb-6">
+            <div className="w-12 h-12 bg-slate-100 rounded-2xl flex items-center justify-center shadow-sm">
+              <UserCheck className="text-brand-primary w-6 h-6" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-black text-slate-900 tracking-tight">Private 1:1 Mentorship</h2>
+              <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Bespoke Coaching & Logistics</p>
+            </div>
+          </div>
+          <FAQItem items={privateFAQs} />
+        </section>
+
+        {/* 4. CATEGORY: MEMBERSHIP */}
         <section className="mb-32">
           <div className="flex items-center gap-4 mb-12 border-b border-slate-100 pb-6">
             <div className="w-12 h-12 bg-brand-primary rounded-2xl flex items-center justify-center shadow-lg shadow-brand-primary/20">
               <CreditCard className="text-white w-6 h-6" />
             </div>
             <div>
-              <h2 className="text-2xl font-black text-slate-900 tracking-tight">Membership & Logistics</h2>
+              <h2 className="text-2xl font-black text-slate-900 tracking-tight">Membership & Payments</h2>
               <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Billing, Trials & Plans</p>
             </div>
           </div>
           <FAQItem items={membershipFAQs} />
         </section>
 
-        {/* 4. FINAL CTA - Support Card */}
+        {/* 5. FINAL CTA - Support Card */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           className="bg-slate-900 rounded-[3.5rem] p-12 md:p-16 text-center relative overflow-hidden"
         >
-          {/* Dekoratif Işık Oyunu */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 rounded-full blur-[100px] -mr-32 -mt-32"></div>
           
           <div className="relative z-10">
@@ -97,19 +118,24 @@ export default function FAQPage() {
               I'm here to help you find the perfect path for your Turkish goals. Let's talk directly.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-              <button className="w-full md:w-auto bg-brand-primary text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white hover:text-slate-900 transition-all flex items-center justify-center gap-2">
-                <a href="https://wa.me/00573219372828" target="_blank" rel="noopener noreferrer">WhatsApp Support</a> <ArrowRight className="w-4 h-4" />
-              </button>
-              <button className="w-full md:w-auto bg-white/5 text-white border border-white/10 px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white/10 transition-all">
-                              <a href="mailto:cordukabdullah@gmail.com">
-                  Send an Email
-                </a>
-              </button>
+              <a 
+                href="https://wa.me/00573219372828" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full md:w-auto bg-brand-primary text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white hover:text-slate-900 transition-all flex items-center justify-center gap-2 group"
+              >
+                WhatsApp Support <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a 
+                href="mailto:cordukabdullah@gmail.com"
+                className="w-full md:w-auto bg-white/5 text-white border border-white/10 px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white/10 transition-all text-center"
+              >
+                Send an Email
+              </a>
             </div>
           </div>
         </motion.div>
 
-        {/* Alt Bilgi */}
         <div className="mt-20 text-center text-slate-300 text-[10px] font-bold uppercase tracking-[0.4em]">
           <Sparkles className="w-4 h-4 inline-block mr-2 opacity-50" /> Decoding Turkish Since 2014
         </div>
