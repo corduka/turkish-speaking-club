@@ -18,6 +18,15 @@ import testimonial1 from "../assets/testimonial-1.webp";
 import testimonial2 from "../assets/testimonial-2.webp";
 import testimonial3 from "../assets/testimonial-3.webp";
 
+//GTM
+const handleCTAStats = () => {
+  window.dataLayer.push({
+    event: 'cta_click',
+    cta_location: 'hero_section',
+    button_text: 'Book Strategy Call'
+  });
+  se
+
 //Section 2: hareketli rakamlar
 const AnimatedNumber = ({ value }) => {
   const count = useMotionValue(0);
@@ -100,7 +109,11 @@ export default function Home() {
                 className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start"
               >
                 <button 
-                  onClick={() => openForm('hero_main')}
+                  onClick={() => {
+  handleCTAStats();
+  openForm('hero_main');
+}}
+                  
                   className="bg-brand-primary text-white px-10 py-5 rounded-[2rem] font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all active:scale-95"
                 >
                   Join The Club
