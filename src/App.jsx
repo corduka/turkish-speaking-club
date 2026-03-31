@@ -20,15 +20,6 @@ import FAQ from './pages/FAQ';
 import BlogList from './pages/blog/BlogList';
 import BlogDetail from './pages/blog/BlogDetail';
 
-
-
-import TagManager from 'react-gtm-module';
-const tagManagerArgs = {
-    gtmId: 'GTM-5G8NMBTS' // Kendi ID'ni buraya yapıştır
-};
-TagManager.initialize(tagManagerArgs);
-
-
 function App() {
   return (
     <FormProvider>
