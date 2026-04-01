@@ -47,10 +47,25 @@ export default function BlogDetail() {
 
   return (
     <div className="bg-white min-h-screen">
-      <Helmet>
-        <title>{post.title} | Turkish Speaking Club</title>
-        <meta name="description" content={post.excerpt} />
-      </Helmet>
+<Helmet>
+  {/* Ana Meta Verileri */}
+  <title>{post.title} | Turkish Speaking Club Journal</title>
+  <meta name="description" content={post.metaDescription || post.excerpt} />
+  <meta name="keywords" content={post.keywords} />
+  <link rel="canonical" href={`https://turkishspeakingclub.com/blog/${post.slug}`} />
+
+  {/* Sosyal Medya (Open Graph - WhatsApp/Facebook paylaşımı için) */}
+  <meta property="og:title" content={post.title} />
+  <meta property="og:description" content={post.metaDescription || post.excerpt} />
+  <meta property="og:image" content={`https://turkishspeakingclub.com${post.image}`} />
+  <meta property="og:url" content={`https://turkishspeakingclub.com/blog/${post.slug}`} />
+  <meta property="og:type" content="article" />
+
+  {/* Twitter Kartı */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={post.title} />
+  <meta name="twitter:image" content={`https://turkishspeakingclub.com${post.image}`} />
+</Helmet>
 
       {/* 1. Progress Bar */}
       <motion.div 
