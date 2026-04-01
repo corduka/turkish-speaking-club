@@ -20,10 +20,6 @@ export default function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
-
-  useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
   }, [isOpen]);
 
