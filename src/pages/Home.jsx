@@ -58,7 +58,7 @@ const testimonials = [
 // Common Questions
 const homeFAQs = [
         { q: "Is it beginner friendly?", a: "Absolutely. I have dedicated 'First Steps' groups starting from A1 level, designed to build your foundation through natural conversation from day one." },
-        { q: "How many students in a group?", a: "To ensure the highest quality of interaction, I strictly cap sessions at 4–6 students. This boutique approach is what makes the progress so rapid." },
+        { q: "How many students in a group?", a: "To ensure the highest quality of interaction, I strictly cap sessions at max 5 students. This boutique approach is what makes the progress so rapid." },
         { q: "What if I miss a session?", a: "Life happens. While live participation is best, you'll receive detailed logic-based notes and summary of the session to keep you on track." },
         { q: "Is there homework?", a: "We replace repetitive drills with Pre-Session Briefings. Instead of worksheets, you’ll receive curated insights, short videos, or thought-provoking prompts designed to prime your mind for the next conversation." }
 ];
@@ -289,7 +289,7 @@ export default function Home() {
             </div>
             <div className="grid lg:grid-cols-3 gap-16">
               {[
-                { t: "Small Groups", d: "Practice in intimate circles of max 4–6 students.", icon: <Users2 className="w-5 h-5" /> },
+                { t: "Small Groups", d: "Practice in intimate circles of max 5 students.", icon: <Users2 className="w-5 h-5" /> },
                 { t: "Real-Life Topics", d: "No boring textbooks. We discuss culture and daily life.", icon: <MessageCircle className="w-5 h-5" /> },
                 { t: "Guided Feedback", d: "Receive real-time corrections and personalized notes.", icon: <LineChart className="w-5 h-5" /> }
               ].map((step, i) => (
@@ -367,7 +367,7 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 { t: "Speaking > Grammar", d: "We prioritize actual usage over dry, isolated rules. Every session is 100% active speaking.", icon: <MessageCircle className="w-8 h-8 text-brand-secondary" /> },
-                { t: "Real Interaction", d: "Small, curated groups of 4-6 students. You're never just a number here.", icon: <Users2 className="w-8 h-8 text-brand-secondary" /> },
+                { t: "Real Interaction", d: "Small, curated groups of max 5 students. You're never just a number here.", icon: <Users2 className="w-8 h-8 text-brand-secondary" /> },
                 { t: "The Architecture of Fluency", d: "Turkish is a beautifully logical system. I deconstruct complex grammar into clear frameworks for effortless fluency.", icon: <LineChart className="w-8 h-8 text-brand-secondary" /> }
               ].map((val, i) => (
                 <div key={i} className="p-10 rounded-[3rem] bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all group">
