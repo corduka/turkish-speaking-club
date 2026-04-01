@@ -89,14 +89,14 @@ export default function Home() {
                 Master Turkish <br /> 
                 <span className="text-brand-primary italic font-serif">Naturally.</span>
               </motion.h1>
-              <motion.p 
+              <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 className="text-xl text-slate-500 mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed"
               >
-                Join expert-led boutique groups of 5. Learn naturally, speak fluently, and build confidence. Your first session is free!
-              </motion.p>
+                Join expert-led boutique Turkish lessons in groups of 5. Learn naturally, speak fluently, and build confidence. Your first session is free!
+              </motion.h2>
 
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}

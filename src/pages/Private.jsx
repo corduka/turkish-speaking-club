@@ -7,6 +7,7 @@ import { PopupModal } from 'react-calendly';
 import mainProfile from "../assets/main-profile.webp";
 import FAQItem from '../components/FAQItem';
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet-async";
 
 const nicheScenarios = [
   {
@@ -66,6 +67,11 @@ export default function Private() {
 
   return (
     <>
+    <Helmet>
+      <title>Private Turkish Lessons 1:1 | Master Turkish with Abdullah</title>
+      <meta name="description" content="Personalized 1:1 Turkish coaching for expats and professionals. Master the logic of the Turkish language with a bespoke learning path. Book your free lesson now." />
+      <link rel="canonical" href="https://turkishspeakingclub.com/private" />
+    </Helmet>
       <PopupModal
         url="https://calendly.com/abdullah-corduk/30min"
         onModalClose={() => setIsCalendlyOpen(false)}
@@ -81,8 +87,8 @@ export default function Private() {
                 <Sparkles className="w-3.5 h-3.5 fill-current" /> 1:1 Private Mentorship
               </div>
               <h1 className="text-6xl lg:text-8xl font-black leading-[0.95] tracking-tighter mb-8 text-slate-900">
-                Don't Just Learn. <br /> 
-                <span className="text-brand-primary italic font-serif font-light">Belong.</span>
+                Private Turkish <br /> 
+                <span className="text-brand-primary italic font-serif font-light">Lessons.</span>
               </h1>
               <p className="text-xl text-slate-500 mb-10 leading-relaxed max-w-xl font-medium">
                 My 1:1 coaching is a bespoke experience designed for <span className="text-slate-900 border-b-2 border-brand-primary/20">real-life connection</span>. We don't follow books; we follow your life.
@@ -128,7 +134,7 @@ export default function Private() {
           </div>
         </section>
 
-        {/* 3. THE METHOD SECTION (Marcus Resim Eklendi) */}
+        {/* 3. THE METHOD SECTION  */}
         <section className="py-40 bg-slate-50">
           <div className="max-w-5xl mx-auto px-6">
             <div className="flex flex-col md:flex-row gap-24 items-center">
@@ -168,7 +174,7 @@ export default function Private() {
                        <img 
                          src="../src/assets/tolga.webp" 
                          className="w-14 h-14 rounded-2xl object-cover border-2 border-slate-700" 
-                         alt="Marcus" 
+                         alt="Private Turkish student testimonial - Expat in Istanbul" 
                        />
                        <div>
                           <p className="text-xs font-black uppercase tracking-widest text-brand-primary leading-none mb-1">Dennis</p>
@@ -285,6 +291,62 @@ export default function Private() {
             </div>
           </div>
         </section>
+
+{/* Alt Yönlendirme Bölümü - Luxury Edition */}
+<section className="py-32 bg-white relative overflow-hidden">
+  <div className="max-w-5xl mx-auto px-6">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="relative group bg-slate-900 rounded-[4rem] p-12 md:p-20 overflow-hidden shadow-2xl"
+    >
+      {/* Dekoratif Arka Plan Parıltısı */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[100px] -z-10 group-hover:bg-brand-primary/20 transition-colors duration-700" />
+      
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
+        <div className="max-w-md text-center lg:text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-brand-primary text-[10px] font-black uppercase tracking-[0.3em] mb-6">
+             Community Choice
+          </div>
+          <h3 className="text-3xl md:text-4xl font-black text-white mb-6 tracking-tight leading-tight">
+            Not ready for <br />
+            <span className="text-brand-primary italic font-serif font-light">1:1 Intensity?</span>
+          </h3>
+          <p className="text-slate-400 font-medium text-lg leading-relaxed">
+            Experience the same logic-based method in our <span className="text-white">Boutique Speaking Club.</span> A curated circle of global peers.
+          </p>
+        </div>
+
+        <div className="flex flex-col items-center lg:items-end gap-6 shrink-0">
+          <Link 
+            to="/membership" 
+            className="group/btn relative bg-brand-primary text-white px-12 py-6 rounded-full font-bold text-lg hover:shadow-[0_20px_40px_rgba(var(--brand-primary-rgb),0.3)] transition-all duration-500 overflow-hidden flex items-center gap-3"
+          >
+            <span className="relative z-10">Explore Group Sessions</span>
+            <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform duration-500" />
+            
+            {/* Hover Shine Effect */}
+            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700" />
+          </Link>
+          
+          <div className="flex items-center gap-3 opacity-60">
+             <div className="flex -space-x-2">
+                {[1,2,3].map(i => (
+                  <div key={i} className="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center text-[10px] text-white font-bold">
+                    {String.fromCharCode(64 + i)}
+                  </div>
+                ))}
+             </div>
+             <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest">
+               Next group starts soon
+             </span>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
 {/* 6. COMMON QUESTIONS - REFINED & ELEGANT */}
 <section className="py-40 bg-white border-t border-slate-50">
