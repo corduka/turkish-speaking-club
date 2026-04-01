@@ -86,7 +86,7 @@ export default function HowItWorks() {
             <h3 className="text-3xl font-bold mb-6">What to expect in every session?</h3>
             <ul className="space-y-4">
               {[
-                "Max 6 students for personal attention",
+                "Max 5 students for personal attention",
                 "Curated weekly conversation topics",
                 "Post-session feedback and vocabulary notes",
                 "A friendly, judgment-free atmosphere"

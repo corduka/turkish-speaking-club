@@ -70,7 +70,7 @@ export default function Home() {
     <>
       <Helmet>
         <title>Online Turkish Courses | Learn Turkish Naturally | Turkish Speaking Club</title>
-        <meta name="description" content="Master Turkish through expert-led boutique group sessions (max 6 students). Focus on natural conversation, logic-based learning, and speaking confidence. Book your free session!" />
+        <meta name="description" content="Master Turkish through expert-led boutique group sessions (max 5 students). Focus on natural conversation, logic-based learning, and speaking confidence. Book your free session!" />
         <link rel="canonical" href="https://turkishspeakingclub.com/" />
       </Helmet>
 
