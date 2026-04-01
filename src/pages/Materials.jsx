@@ -65,21 +65,21 @@ export default function Materials() {
           </span>
                   </motion.div>
                 <div className="text-center mb-20">
-          <motion.h2 
+          <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-6xl font-black my-6 tracking-tight text-slate-900"
           >
-            Learning <span className="text-brand-primary italic font-serif font-light">Resources</span>
-          </motion.h2>
-          <motion.p 
+            Exclusive Turkish Learning <span className="text-brand-primary italic font-serif font-light"> Resources & Materials</span>
+          </motion.h1>
+          <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="text-slate-600 max-w-2xl mx-auto text-lg"
           >
-            Curated materials designed to bridge the gap between sessions. Download, practice, and level up.
-          </motion.p>
+            Step-by-step materials designed for expats and global professionals. Enhance your learning journey with downloadable Turkish exercises and expert-led study resources.
+          </motion.h2>
         </div>
       </section>
 

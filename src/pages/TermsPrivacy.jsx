@@ -19,7 +19,7 @@ const TermsAndPrivacy = () => {
       >
         <header className="mb-12 border-b border-slate-100 pb-8">
           <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">Terms of Service & Privacy Policy</h1>
-          <p className="mt-4 text-slate-500 font-medium">Last Updated: March 2026</p>
+          <h2 className="mt-4 text-slate-500 font-medium">Last Updated: March 2026</h2>
         </header>
 
         <article className="prose prose-slate lg:prose-lg max-w-none">

@@ -47,12 +47,12 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-8xl font-black mb-8 tracking-tighter text-slate-900"
           >
-            Meet <span className="text-brand-primary italic font-serif font-light text-7xl md:text-9xl">Abdullah.</span>
+            Meet Abdullah <br/> <span className="text-brand-primary italic font-serif font-light text-7xl md:text-9xl">Your Expert Turkish Language Coach.</span>
           </motion.h1>
-          <p className="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium">
+          <h2 className="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium">
             A linguist by heart, a polyglot by choice, and a mentor by mission. <br />
             <span className="text-slate-900 italic font-serif">"I don't just teach a language; I build bridges between lives."</span>
-          </p>
+          </h2>
         </div>
 
         {/* 2. BENTO GRID - Premium Layout */}

@@ -55,11 +55,11 @@ export default function Membership() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-6xl font-black mb-6 tracking-tight text-slate-900"
           >
-            Simple, Transparent <span className="text-brand-primary italic font-serif font-light">Pricing.</span>
+            Invest in Your Fluency: <span className="text-brand-primary italic font-serif font-light">Turkish Membership Options.</span>
           </motion.h1>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto font-medium">
-            No hidden fees. No complicated contracts. Just a clear path to Turkish fluency with a boutique method that works.
-          </p>
+          <h2 className="text-slate-500 text-lg max-w-2xl mx-auto font-medium">
+            Get a clear path to Turkish speaking confidence with our boutique method. Simple pricing, no hidden fees, and curated materials included in every membership block.
+          </h2>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 items-start">

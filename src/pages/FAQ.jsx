@@ -60,9 +60,9 @@ export default function FAQPage() {
           >
             Common <span className="text-brand-primary italic font-serif font-light">Questions.</span>
           </motion.h1>
-          <p className="text-xl text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed">
+          <h2 className="text-xl text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed">
             Everything you need to know about the method, the club, and your journey to Turkish fluency.
-          </p>
+          </h2>
         </div>
 
         {/* 2. CATEGORY: THE EXPERIENCE (Group) */}

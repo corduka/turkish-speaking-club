@@ -28,8 +28,16 @@ export default function BlogList() {
           transition={{ delay: 0.1 }}
           className="text-6xl md:text-7xl font-bold mb-8 tracking-tighter text-slate-900"
         >
-          Stories from <br/> <span className="text-slate-400">the Heart of Turkey.</span>
+          Turkish Language & Culture Blog: <br/> <span className="text-brand-primary italic font-serif font-light">Expert Insights.</span>
         </motion.h1>
+                  <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-slate-600 max-w-2xl text-lg"
+          >
+            The ultimate resource for global professionals. Dive into the logic of the Turkish mind with expert articles, practical language tips and curated cultural stories. From secret family recipes to essential culinary verbs, learn Turkish through the art of cooking.
+          </motion.h2>
       </div>
       
       {/* Premium Filter Bar */}

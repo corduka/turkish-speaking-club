@@ -38,21 +38,21 @@ export default function HowItWorks() {
       <section className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
         <div className="text-center mb-20">
-          <motion.h2 
+          <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-6xl font-black mb-6 tracking-tight text-slate-900"
           >
-            How it <span className="text-brand-primary italic font-serif font-light">Works</span>
-          </motion.h2>
-          <motion.p 
+            How Our Online Turkish Course <span className="text-brand-primary italic font-serif font-light">Works</span>
+          </motion.h1>
+          <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="text-slate-600 max-w-2xl mx-auto text-lg"
           >
-            We’ve designed a seamless experience to get you from "understanding" to "speaking" Turkish as fast as possible.
-          </motion.p>
+            We’ve designed a seamless learning experience to take you from basic understanding to speaking Turkish fluently. Master the logic of the language with our expert-led, conversation-focused methodology.
+          </motion.h2>
         </div>
 
         {/* Steps Grid */}
