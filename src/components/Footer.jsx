@@ -28,7 +28,7 @@ export default function Footer() {
               {[
                 { icon: <Instagram className="w-5 h-5 cursor-not-allowed" />, href: "#" },
                 { icon: <Linkedin className="w-5 h-5 cursor-not-allowed" />, href: "#" },
-                { icon: <Youtube className="w-5 h-5" />, href: "#" }
+                { icon: <Youtube className="w-5 h-5 cursor-not-allowed" />, href: "#" }
               ].map((social, i) => (
                 <a 
                   key={i} 

@@ -162,9 +162,9 @@ export default function Navbar() {
             {/* Footer of Mobile Menu */}
             <div className="p-10 border-t border-slate-50 flex justify-between items-center">
               <div className="flex gap-6">
-                <Instagram className="w-5 h-5 text-slate-400" />
-                <Linkedin className="w-5 h-5 text-slate-400" />
-                <Mail className="w-5 h-5 text-slate-400" />
+                <Instagram className="w-5 h-5 text-slate-400 cursor-not-allowed" />
+                <Linkedin className="w-5 h-5 text-slate-400 cursor-not-allowed" />
+                <Mail className="w-5 h-5 text-slate-400 cursor-not-allowed" />
               </div>
               <p className="text-[10px] font-black uppercase tracking-widest text-slate-300 italic font-serif">
                 Boutique Turkish Learning
