@@ -1,4 +1,6 @@
+# Tüm arama motoru botlarına izin ver
 User-agent: *
-Disallow: /
+Allow: /
 
+# Site haritasının yerini açıkça belirt (Kritik!)
 Sitemap: https://turkishspeakingclub.com/sitemap.xml
