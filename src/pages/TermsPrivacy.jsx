@@ -8,7 +8,7 @@ const TermsAndPrivacy = () => {
         <>
         <Helmet>
           <title>Privacy Policy | Turkish Speaking Club</title>
-          <meta name="description" content="Our commitment to your privacy. Read how we protect your data and ensure a secure learning environment at Turkish Speaking Club." />
+          <meta name="description" key="description" content="Our commitment to your privacy. Read how we protect your data and ensure a secure learning environment at Turkish Speaking Club." />
           <link rel="canonical" href="https://turkishspeakingclub.com/terms-and-privacy" />
         </Helmet>
     <div className="min-h-screen bg-slate-50 py-40 px-6 sm:px-12 lg:px-24">

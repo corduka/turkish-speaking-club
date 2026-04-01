@@ -74,7 +74,7 @@ export default function Private() {
     <>
     <Helmet>
       <title>Private Turkish Lessons 1:1 | Master Turkish with Abdullah</title>
-      <meta name="description" content="Personalized 1:1 Turkish coaching for expats and professionals. Master the logic of the Turkish language with a bespoke learning path. Book your free lesson now." />
+      <meta name="description" key="description" content="Personalized 1:1 Turkish coaching for expats and professionals. Master the logic of the Turkish language with a bespoke learning path. Book your free lesson now." />
       <link rel="canonical" href="https://turkishspeakingclub.com/private" />
     </Helmet>
       <PopupModal

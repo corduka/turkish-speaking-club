@@ -50,7 +50,7 @@ export default function Materials() {
         <>
         <Helmet>
           <title>Turkish Learning Materials | Our Spotify List & Digital Resources</title>
-          <meta name="description" content="Access our exclusive, custom-built Turkish learning materials. From digital logic maps to interactive drills, master the Turkish language structure without boring textbooks." />
+          <meta name="description" key="description" content="Access our exclusive, custom-built Turkish learning materials. From digital logic maps to interactive drills, master the Turkish language structure without boring textbooks." />
           <link rel="canonical" href="https://turkishspeakingclub.com/materials" />
         </Helmet>
     <div className="pt-32 pb-20 bg-white">

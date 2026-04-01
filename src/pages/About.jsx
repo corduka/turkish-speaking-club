@@ -12,6 +12,7 @@ import {
   CloudLightning
 } from 'lucide-react';
 import mainProfile from "../assets/main-profile.webp";
+import { Helmet } from "react-helmet-async";
 
 export default function About() {
   const { openForm } = useForm();
@@ -30,6 +31,13 @@ export default function About() {
   };
 
   return (
+    <>
+          <Helmet>
+            <title>Meet Abdullah: Expert Turkish Language Coach & Founder of TSC</title>
+            <meta name="description" key="description" content="Discover the story behind the logic-based Turkish method. Meet Abdullah, a professional Turkish coach dedicated to helping expats and global professionals master the language naturally." />
+            <link rel="canonical" href="https://turkishspeakingclub.com/faq" />
+          </Helmet>
+          
     <main className="pt-40 pb-20 px-6 bg-white min-h-screen font-sans">
       <div className="max-w-7xl mx-auto">
         
@@ -189,5 +197,6 @@ export default function About() {
 
       </div>
     </main>
+    </>
   );
 }

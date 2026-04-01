@@ -31,7 +31,7 @@ export default function HowItWorks() {
     <>
         <Helmet>
           <title>Turkish Language & Culture Blog | Learning Tips & Insights</title>
-          <meta name="description" content="Expert tips on learning Turkish, cultural guides for expats, and deep dives into the logic of the Turkish mind. Enhance your language journey with our latest articles." />
+          <meta name="description" key="description" content="Expert tips on learning Turkish, cultural guides for expats, and deep dives into the logic of the Turkish mind. Enhance your language journey with our latest articles." />
           <link rel="canonical" href="https://turkishspeakingclub.com/blog" />
         </Helmet>
     <div className="pt-32 pb-20 min-h-screen">

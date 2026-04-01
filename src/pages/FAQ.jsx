@@ -38,7 +38,7 @@ export default function FAQPage() {
     <> 
       <Helmet>
         <title>Common Questions about Learning Turkish | Frequently Asked Questions</title>
-        <meta name="description" content="Everything you need to know about our Turkish lessons: scheduling, pricing, logic-based methods, and how to join our boutique groups. Get your answers here." />
+        <meta name="description" key="description" content="Everything you need to know about our Turkish lessons: scheduling, pricing, logic-based methods, and how to join our boutique groups. Get your answers here." />
         <link rel="canonical" href="https://turkishspeakingclub.com/faq" />
       </Helmet>
     <main className="pt-40 pb-32 bg-white min-h-screen font-sans">
