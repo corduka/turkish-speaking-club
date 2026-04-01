@@ -8,6 +8,10 @@ import mainProfile from "../assets/main-profile.webp";
 import FAQItem from '../components/FAQItem';
 import { Link } from 'react-router-dom';
 import { Helmet } from "react-helmet-async";
+import danielImg from "../assets/daniel-testimonial.webp";
+import arinaImg from "../assets/arina-testimonial.webp";
+import fabienneImg from "../assets/fabienne-testimonial.webp";
+import tolgaImg from "../assets/tolga.webp";
 
 const nicheScenarios = [
   {
@@ -36,21 +40,21 @@ const testimonials = [
     text: "Abdullah is fantastic and dedicated tutor who is patient while also challenging me to learn more. His lessons have been adapting to my needs in a very productive way. He uses a indexed lesson plan with flashcards, annotations and also examples from my own mother tongue so that I grasp concepts better. Recommend him a lot.",
     name: "Daniel G.",
     status: "Expat in Istanbul",
-    img: "../src/assets/daniel-testimonial.webp"
+    img: danielImg
   },
   {
     id: 2,
     text: "Abdullah is incredibly attentive and supportive. He created a personalized learning pathway based on my goals and learning style, which has really helped me stay motivated and focused. Abdullah explains everything very clearly, going into detail when needed, so nothing feels confusing or rushed.",
     name: "Arina P.",
     status: "Tech Executive",
-    img: "../src/assets/arina-testimonial.webp"
+    img: arinaImg
   },
   {
     id: 3,
     text: "The lessons with Abdullah are very well structured, he has prepared excellently and teaches in a way that motivates you to want to learn more Turkish. I would recommend anyone who wants to learn Turkish to take lessons with Abdullah! Bravo!",
     name: "Fabienne R.",
     status: "Language Learner",
-    img: "../src/assets/fabienne-testimonial.webp"
+    img: fabienneImg
   }
 ];
 
@@ -90,9 +94,10 @@ export default function Private() {
                 Private Turkish <br /> 
                 <span className="text-brand-primary italic font-serif font-light">Lessons.</span>
               </h1>
-              <p className="text-xl text-slate-500 mb-10 leading-relaxed max-w-xl font-medium">
-                My 1:1 coaching is a bespoke experience designed for <span className="text-slate-900 border-b-2 border-brand-primary/20">real-life connection</span>. We don't follow books; we follow your life.
-              </p>
+              <h2 className="text-xl text-slate-500 mb-10 leading-relaxed max-w-xl font-medium">
+                                Personalized Online Turkish Lessons for 
+ <span className="text-slate-900 border-b-2 border-brand-primary/20"> Expats, Families and Global Professionals</span>.
+              </h2>
               <button 
                 onClick={() => setIsCalendlyOpen(true)}
                 className="bg-brand-dark text-white px-12 py-6 rounded-full font-bold text-lg flex items-center justify-center gap-3 hover:bg-brand-primary transition-all shadow-xl hover:shadow-brand-primary/20"
@@ -172,7 +177,7 @@ export default function Private() {
                     </p>
                     <div className="flex items-center gap-4 border-t border-white/10 pt-8">
                        <img 
-                         src="../src/assets/tolga.webp" 
+                         src={tolgaImg} 
                          className="w-14 h-14 rounded-2xl object-cover border-2 border-slate-700" 
                          alt="Private Turkish student testimonial - Expat in Istanbul" 
                        />
