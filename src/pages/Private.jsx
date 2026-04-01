@@ -297,55 +297,66 @@ export default function Private() {
           </div>
         </section>
 
-{/* Alt Yönlendirme Bölümü - Luxury Edition */}
-<section className="py-32 bg-white relative overflow-hidden">
-  <div className="max-w-5xl mx-auto px-6">
+{/* Alt Yönlendirme Bölümü - Soft Premium Edition */}
+<section className="py-40 bg-white relative">
+  <div className="max-w-6xl mx-auto px-6">
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="relative group bg-slate-900 rounded-[4rem] p-12 md:p-20 overflow-hidden shadow-2xl"
+      className="relative rounded-[4rem] p-12 md:p-24 border border-slate-100 bg-[#F8FAFC] overflow-hidden"
     >
-      {/* Dekoratif Arka Plan Parıltısı */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[100px] -z-10 group-hover:bg-brand-primary/20 transition-colors duration-700" />
-      
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
-        <div className="max-w-md text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-brand-primary text-[10px] font-black uppercase tracking-[0.3em] mb-6">
-             Community Choice
-          </div>
-          <h3 className="text-3xl md:text-4xl font-black text-white mb-6 tracking-tight leading-tight">
+      {/* Arka planda çok hafif, dekoratif bir 'TSC' filigranı veya desen */}
+      <div className="absolute -bottom-10 -right-10 text-[15rem] font-serif italic text-slate-200/40 select-none pointer-events-none">
+        TSC
+      </div>
+
+      <div className="flex flex-col lg:flex-row items-center gap-16 relative z-10">
+        <div className="flex-1 text-center lg:text-left">
+          <motion.div 
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-[10px] font-black uppercase tracking-[0.3em] mb-8"
+          >
+             Explore Community Learning
+          </motion.div>
+          
+          <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 tracking-tight leading-[1.1]">
             Not ready for <br />
             <span className="text-brand-primary italic font-serif font-light">1:1 Intensity?</span>
           </h3>
-          <p className="text-slate-400 font-medium text-lg leading-relaxed">
-            Experience the same logic-based method in our <span className="text-white">Boutique Speaking Club.</span> A curated circle of global peers.
+          
+          <p className="text-slate-500 font-medium text-xl leading-relaxed max-w-md mx-auto lg:mx-0">
+            Experience the same <span className="text-slate-900">logic-based method</span> in our Boutique Speaking Club. Small groups, massive progress.
           </p>
         </div>
 
-        <div className="flex flex-col items-center lg:items-end gap-6 shrink-0">
+        <div className="flex-shrink-0">
           <Link 
             to="/membership" 
-            className="group/btn relative bg-brand-primary text-white px-12 py-6 rounded-full font-bold text-lg hover:shadow-[0_20px_40px_rgba(var(--brand-primary-rgb),0.3)] transition-all duration-500 overflow-hidden flex items-center gap-3"
+            className="group relative inline-flex items-center gap-4 bg-white border-2 border-slate-900 text-slate-900 px-12 py-6 rounded-full font-bold text-lg hover:bg-slate-900 hover:text-white transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.05)]"
           >
-            <span className="relative z-10">Explore Group Sessions</span>
-            <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform duration-500" />
-            
-            {/* Hover Shine Effect */}
-            <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700" />
+            <span>Explore Group Sessions</span>
+            <div className="w-8 h-8 rounded-full bg-brand-primary flex items-center justify-center text-white group-hover:rotate-45 transition-transform duration-500">
+              <ArrowUpRight className="w-5 h-5" />
+            </div>
           </Link>
           
-          <div className="flex items-center gap-3 opacity-60">
-             <div className="flex -space-x-2">
-                {[1,2,3].map(i => (
-                  <div key={i} className="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center text-[10px] text-white font-bold">
-                    {String.fromCharCode(64 + i)}
-                  </div>
-                ))}
-             </div>
-             <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest">
-               Next group starts soon
-             </span>
+          <div className="mt-8 flex items-center justify-center lg:justify-start gap-4">
+            <div className="flex -space-x-3">
+              {[danielImg, tolgaImg, arinaImg].map((img, i) => (
+                <img 
+                  key={i}
+                  src={img} 
+                  className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm" 
+                  alt="Student"
+                />
+              ))}
+            </div>
+            <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
+              Join 500+ global learners
+            </p>
           </div>
         </div>
       </div>
