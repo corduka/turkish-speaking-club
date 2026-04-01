@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Home, ArrowLeft, Sparkles } from 'lucide-react';
+// for meta title and description
+import { Helmet } from "react-helmet-async";
 
 export default function NotFound() {
   return (
+      <>
+  <Helmet>
+    <title>Page Not Found | Turkish Speaking Club</title>
+    <meta name="robots" content="noindex, follow" />
+  </Helmet>
     <div className="min-h-screen bg-white flex items-center justify-center px-6 relative overflow-hidden">
       {/* Dekoratif Arka Plan Elemanları */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_var(--tw-gradient-stops))] from-brand-primary/5 via-transparent to-transparent -z-10" />
@@ -64,5 +71,6 @@ export default function NotFound() {
         </div>
       </div>
     </div>
+    </>
   );
 }

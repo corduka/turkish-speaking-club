@@ -4,6 +4,7 @@ import { useForm } from '../context/FormContext';
 import { Check, Wallet, ShieldCheck, Zap, ArrowRight, ArrowUpRight, MessageCircle } from 'lucide-react';
 import FAQItem from '../components/FAQItem';
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet-async";
 
 const pricingDetails = {
   name: "Boutique Club Membership",
@@ -38,6 +39,12 @@ export default function Membership() {
   const { openForm } = useForm();
 
   return (
+        <>
+      <Helmet>
+        <title>Affordable Turkish Group Lessons & Memberships | Pricing Plans</title>
+        <meta name="description" content="Transparent pricing for boutique group sessions and private 1:1 Turkish coaching. Choose the plan that fits your pace and start learning Turkish naturally." />
+        <link rel="canonical" href="https://turkishspeakingclub.com/membership" />
+      </Helmet>
     <main className="pt-32 pb-20 px-6 bg-slate-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
         
@@ -186,5 +193,6 @@ export default function Membership() {
 
       </div>
     </main>
+    </>
   );
 }

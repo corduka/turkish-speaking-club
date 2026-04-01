@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { FileText, Play, Lock, Download, Star } from 'lucide-react';
+// for meta title and description
+import { Helmet } from "react-helmet-async";
 
 const resources = [
     { 
@@ -45,6 +47,12 @@ const resources = [
 
 export default function Materials() {
   return (
+        <>
+        <Helmet>
+          <title>Turkish Learning Materials | Our Spotify List & Digital Resources</title>
+          <meta name="description" content="Access our exclusive, custom-built Turkish learning materials. From digital logic maps to interactive drills, master the Turkish language structure without boring textbooks." />
+          <link rel="canonical" href="https://turkishspeakingclub.com/materials" />
+        </Helmet>
     <div className="pt-32 pb-20 bg-white">
       {/* Header Section */}
       <section className="max-w-7xl mx-auto px-6 text-center mb-16">
@@ -172,5 +180,6 @@ export default function Materials() {
         </motion.div>
       </section>
     </div>
+    </>
   );
 }

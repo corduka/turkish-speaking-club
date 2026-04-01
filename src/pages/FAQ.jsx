@@ -10,6 +10,7 @@ import {
   UserCheck
 } from 'lucide-react';
 import FAQItem from '../components/FAQItem';
+import { Helmet } from "react-helmet-async";
 
 const learningFAQs = [
   { q: "Is it beginner friendly?", a: "Absolutely. I have dedicated 'First Steps' groups starting from A1 level, designed to build your foundation through natural conversation from day one." },
@@ -34,6 +35,12 @@ const membershipFAQs = [
 
 export default function FAQPage() {
   return (
+    <> 
+      <Helmet>
+        <title>Common Questions about Learning Turkish | Frequently Asked Questions</title>
+        <meta name="description" content="Everything you need to know about our Turkish lessons: scheduling, pricing, logic-based methods, and how to join our boutique groups. Get your answers here." />
+        <link rel="canonical" href="https://turkishspeakingclub.com/faq" />
+      </Helmet>
     <main className="pt-40 pb-32 bg-white min-h-screen font-sans">
       <div className="max-w-4xl mx-auto px-6">
         
@@ -141,5 +148,6 @@ export default function FAQPage() {
         </div>
       </div>
     </main>
+    </>
   );
 }

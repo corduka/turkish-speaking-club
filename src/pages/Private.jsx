@@ -7,6 +7,7 @@ import { PopupModal } from 'react-calendly';
 import mainProfile from "../assets/main-profile.webp";
 import FAQItem from '../components/FAQItem';
 import { Link } from 'react-router-dom';
+// for meta title and description
 import { Helmet } from "react-helmet-async";
 import danielImg from "../assets/daniel-testimonial.webp";
 import arinaImg from "../assets/arina-testimonial.webp";

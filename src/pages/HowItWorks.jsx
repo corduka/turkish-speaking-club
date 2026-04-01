@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { UserPlus, Calendar, MessageSquare, CheckCircle2 } from 'lucide-react';
 import { useForm } from '../context/FormContext'; // Hook'u ekle
+// for meta title and description
+import { Helmet } from "react-helmet-async";
 
 const steps = [
   {
@@ -26,6 +28,12 @@ const steps = [
 export default function HowItWorks() {
   const { openForm } = useForm(); // Fonksiyonu tanımla
   return (
+    <>
+        <Helmet>
+          <title>Turkish Language & Culture Blog | Learning Tips & Insights</title>
+          <meta name="description" content="Expert tips on learning Turkish, cultural guides for expats, and deep dives into the logic of the Turkish mind. Enhance your language journey with our latest articles." />
+          <link rel="canonical" href="https://turkishspeakingclub.com/blog" />
+        </Helmet>
     <div className="pt-32 pb-20 min-h-screen">
       <section className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
@@ -101,5 +109,6 @@ export default function HowItWorks() {
         </motion.div>
       </section>
     </div>
+    </>
   );
 }

@@ -13,7 +13,6 @@ import FAQItem from '../components/FAQItem';
 // Bileşenler ve Assetler
 import ContactSection from '../components/ContactSection';
 import heroImg from "../assets/hero-image.webp";
-import mainProfile from "../assets/main-profile.webp";
 import testimonial1 from "../assets/testimonial-1.webp";
 import testimonial2 from "../assets/testimonial-2.webp";
 import testimonial3 from "../assets/testimonial-3.webp";
@@ -70,7 +69,8 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Home | Turkish Speaking Club - Master Turkish Naturally</title>
+        <title>Online Turkish Courses | Learn Turkish Naturally | Turkish Speaking Club</title>
+        <meta name="description" content="Master Turkish through expert-led boutique group sessions (max 6 students). Focus on natural conversation, logic-based learning, and speaking confidence. Book your free session!" />
         <link rel="canonical" href="https://turkishspeakingclub.com/" />
       </Helmet>
 

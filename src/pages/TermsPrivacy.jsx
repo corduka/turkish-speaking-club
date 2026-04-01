@@ -1,8 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+// for meta title and description
+import { Helmet } from "react-helmet-async";
 
 const TermsAndPrivacy = () => {
   return (
+        <>
+        <Helmet>
+          <title>Privacy Policy | Turkish Speaking Club</title>
+          <meta name="description" content="Our commitment to your privacy. Read how we protect your data and ensure a secure learning environment at Turkish Speaking Club." />
+          <link rel="canonical" href="https://turkishspeakingclub.com/terms-and-privacy" />
+        </Helmet>
     <div className="min-h-screen bg-slate-50 py-40 px-6 sm:px-12 lg:px-24">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -70,6 +78,7 @@ const TermsAndPrivacy = () => {
         </article>
       </motion.div>
     </div>
+    </>
   );
 };
 
