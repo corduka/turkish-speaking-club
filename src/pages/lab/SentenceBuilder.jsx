@@ -4,6 +4,7 @@ import { tenses, commonVerbs, conjunctions, subjects } from '../../data/lab/sent
 import { ArrowLeft, PenTool, Trash2, CheckCircle2, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import '../../styles/lab/sentenceBuilder.css';
+import { Helmet } from 'react-helmet-async';
 
 export default function SentenceBuilder() {
   const [activeTense, setActiveTense] = useState('present');
@@ -19,6 +20,12 @@ export default function SentenceBuilder() {
 
   return (
     <div style={dynamicStyle} className={`pt-32 pb-20 min-h-screen transition-all duration-1000 ${current.lightColor} relative overflow-x-hidden`}>
+      <Helmet>
+      <title>Turkish Sentence Builder | Logic Lab - Build your own Turkish Sentence</title>
+      <meta name="description" content="Master Turkish sentence structure with our interactive logic-based builder. Practice tenses, verbs, and grammar rules in the Logic Lab." />
+      <meta property="og:title" content="Turkish Sentence Builder | Interactive Logic Lab" />
+      <meta property="og:description" content="Experiment with the mechanics of the Turkish language. Build sentences visually with Abdullah's logic-based method." />
+    </Helmet>
       <div className="bg-glow-effect -top-20 -right-20 pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
