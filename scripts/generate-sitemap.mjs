@@ -14,6 +14,8 @@ const staticPages = [
   '/faq',
   '/terms-and-privacy',
   '/blog',
+  '/logic-lab',
+  '/logic-lab/sentence-builder',
 ];
 
 // Blog Yazılarını Dinamik Olarak Ekle
