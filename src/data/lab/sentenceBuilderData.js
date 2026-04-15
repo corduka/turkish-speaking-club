@@ -62,14 +62,14 @@ export const subjects = [
 ];
 
 export const commonVerbs = [
-  { tr: "Gitmek", en: "To go" },
-  { tr: "Gelmek", en: "To come" },
-  { tr: "Yemek", en: "To eat" },
-  { tr: "İçmek", en: "To drink" },
-  { tr: "Okumak", en: "To read" },
-  { tr: "Yazmak", en: "To write" },
-  { tr: "Öğrenmek", en: "To learn" },
-  { tr: "Konuşmak", en: "To speak" }
+  { tr: "gitmek", en: "To go" },
+  { tr: "gelmek", en: "To come" },
+  { tr: "yemek", en: "To eat" },
+  { tr: "içmek", en: "To drink" },
+  { tr: "okumak", en: "To read" },
+  { tr: "yazmak", en: "To write" },
+  { tr: "öğrenmek", en: "To learn" },
+  { tr: "konuşmak", en: "To speak" }
 ];
 
 export const conjunctions = [
