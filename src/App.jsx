@@ -20,6 +20,10 @@ import FAQ from './pages/FAQ';
 import BlogList from './pages/blog/BlogList';
 import BlogDetail from './pages/blog/BlogDetail';
 
+//Lab Apps
+import LogicLab from './pages/lab/LogicLab';
+import SentenceBuilder from './pages/lab/SentenceBuilder';
+
 function App() {
   return (
     <FormProvider>
@@ -44,6 +48,10 @@ function App() {
             <Route path="*" element={<NotFound />} />
             <Route path="/terms-and-privacy" element={<TermsPrivacy />} />
             <Route path="/faq" element={<FAQ />} />
+
+            {/* Logic Lab Araçları */}
+            <Route path="/logic-lab" element={<LogicLab />} />
+            <Route path="/logic-lab/sentence-builder" element={<SentenceBuilder />} />
           </Routes>
         </main>
         <FormModal /> {/* Form artık burada tek merkezde duruyor */}

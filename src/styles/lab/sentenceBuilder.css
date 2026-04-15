@@ -1,0 +1,41 @@
+/* Arka planda yavaşça dönen soft bir ışık hüzmesi */
+@keyframes slow-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.bg-glow-effect {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(var(--brand-rgb), 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+  animation: slow-rotate 20s linear infinite;
+}
+
+/* Kelime kartlarına hover yapınca alttan gelen parıltı */
+.word-card-hover {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.word-card-hover:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+  transform: translateY(-5px);
+}
+
+/* Yazı alanı için özel focus animasyonu */
+.glass-input {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: var(--tense-color);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  outline: none;
+}

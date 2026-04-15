@@ -10,8 +10,9 @@ const navItems = [
   { id: '02', name: 'How it Works?', path: '/how-it-works' },
   { id: '03', name: 'Membership', path: '/membership' },
   { id: '04', name: 'Private 1:1', path: '/private' },
-  { id: '05', name: 'Materials', path: '/materials' },
-  { id: '06', name: 'Meet Abdullah', path: '/about' },
+  { id: '05', name: 'Meet Abdullah', path: '/about' },
+  { id: '06', name: 'Materials', path: '/materials' },
+  { id: '07', name: 'Logic Lab', path: '/logic-lab' },
 ];
 
 export default function Navbar() {
