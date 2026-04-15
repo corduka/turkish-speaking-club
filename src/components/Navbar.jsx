@@ -51,7 +51,7 @@ export default function Navbar() {
         </Link>
 
 {/* Desktop Nav - Refined Version */}
-<div className="hidden md:flex items-center gap-10">
+<div className="hidden md:flex items-center gap-8">
   {navItems.map((item, index) => (
     <motion.div
       key={item.name}
@@ -62,7 +62,7 @@ export default function Navbar() {
     >
       <Link 
         to={item.path} 
-        className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all duration-300 ${
+        className={`text-[10px] font-black uppercase tracking-[0.25em] transition-all duration-300 ${
           location.pathname === item.path ? 'text-brand-primary' : 'text-slate-500 hover:text-slate-900'
         }`}
       >
