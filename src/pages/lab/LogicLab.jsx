@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Box, ArrowRight, Sparkles, Zap } from 'lucide-react';
+import { Box, ArrowRight, Sparkles, Zap, Layers } from 'lucide-react';
 
 export default function LogicLab() {
   return (
@@ -26,7 +26,7 @@ export default function LogicLab() {
         <Link to="/logic-lab/sentence-builder">
           <motion.div 
             whileHover={{ y: -10 }}
-            className="group bg-white p-12 rounded-[3.5rem] border border-slate-100 shadow-2xl shadow-slate-100/50 relative overflow-hidden"
+            className="group bg-white p-12 rounded-[3.5rem] border border-slate-100 shadow-2xl shadow-slate-100/50 relative overflow-hidden h-full"
           >
             <div className="bg-slate-900 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-primary transition-colors duration-500">
               <Box className="text-white w-8 h-8" />
@@ -42,12 +42,25 @@ export default function LogicLab() {
           </motion.div>
         </Link>
 
-        {/* Placeholder: Gelecek Uygulamalar */}
-        <div className="bg-slate-50 p-12 rounded-[3.5rem] border border-dashed border-slate-200 flex flex-col justify-center items-center text-center">
-          <span className="bg-slate-200 text-slate-500 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-4">Under Development</span>
-          <h3 className="text-2xl font-black text-slate-400">Suffix Engine</h3>
-          <p className="text-slate-400 mt-2 max-w-xs">Soon you'll be able to attach suffixes like LEGO blocks.</p>
-        </div>
+        {/* Suffix Engine Kartı - YENİ AKTİF HALİ */}
+        <Link to="/logic-lab/suffix-engine">
+          <motion.div 
+            whileHover={{ y: -10 }}
+            className="group bg-white p-12 rounded-[3.5rem] border border-slate-100 shadow-2xl shadow-slate-100/50 relative overflow-hidden h-full"
+          >
+            <div className="bg-slate-900 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-emerald-500 transition-colors duration-500">
+              <Layers className="text-white w-8 h-8" />
+            </div>
+            <h3 className="text-3xl font-black text-slate-900 mb-4">Suffix Engine</h3>
+            <p className="text-slate-500 text-lg mb-10 font-medium">Attach suffixes like LEGO blocks. Watch the vowel harmony system work its magic in real-time.</p>
+            <div className="flex items-center gap-2 text-emerald-600 font-black uppercase text-xs tracking-[0.2em]">
+              Build Words <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+            </div>
+            <div className="absolute top-0 right-0 p-12 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-700">
+               <Layers className="w-32 h-32 text-slate-900" />
+            </div>
+          </motion.div>
+        </Link>
       </div>
     </main>
   );

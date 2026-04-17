@@ -23,6 +23,7 @@ import BlogDetail from './pages/blog/BlogDetail';
 // Lab Apps
 import LogicLab from './pages/lab/LogicLab';
 import SentenceBuilder from './pages/lab/SentenceBuilder';
+import SuffixEngine from './pages/lab/SuffixEngine';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
               {/* Logic Lab Araçları - ARTIK NOTFOUND ÜSTÜNDE */}
               <Route path="/logic-lab" element={<LogicLab />} />
               <Route path="/logic-lab/sentence-builder" element={<SentenceBuilder />} />
+              <Route path="/logic-lab/suffix-engine" element={<SuffixEngine />} />
 
               {/* NOT FOUND - HER ZAMAN EN ALTTA OLMALI */}
               <Route path="*" element={<NotFound />} />
