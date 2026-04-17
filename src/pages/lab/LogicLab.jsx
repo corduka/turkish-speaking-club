@@ -1,10 +1,18 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Box, ArrowRight, Sparkles, Zap, Layers } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export default function LogicLab() {
   return (
     <main className="pt-40 pb-32 px-6 max-w-7xl mx-auto min-h-screen">
+        <Helmet>
+            <title>Logic Lab | Interactive Turkish Grammar & LEGO Suffix Builder</title>
+            <meta name="description" content="Build Turkish words like LEGO blocks! Use my interactive Logic Lab to master vowel harmony, suffixes, and sentence structures visually." />
+            {/* Sosyal Medya Paylaşımları İçin (OG Tags) */}
+            <meta property="og:title" content="Logic Lab: Visualizing Turkish Grammar" />
+            <meta property="og:image" content="/images/logic-lab-preview.jpg" /> 
+        </Helmet>
       <div className="text-center mb-20">
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
