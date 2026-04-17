@@ -24,6 +24,7 @@ import BlogDetail from './pages/blog/BlogDetail';
 import LogicLab from './pages/lab/LogicLab';
 import SentenceBuilder from './pages/lab/SentenceBuilder';
 import SuffixEngine from './pages/lab/SuffixEngine';
+import VerbEngine from './pages/lab/VerbEngine';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
               <Route path="/logic-lab" element={<LogicLab />} />
               <Route path="/logic-lab/sentence-builder" element={<SentenceBuilder />} />
               <Route path="/logic-lab/suffix-engine" element={<SuffixEngine />} />
+              <Route path="/logic-lab/verb-engine" element={<VerbEngine />} />
 
               {/* NOT FOUND - HER ZAMAN EN ALTTA OLMALI */}
               <Route path="*" element={<NotFound />} />

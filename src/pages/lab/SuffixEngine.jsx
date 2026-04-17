@@ -91,9 +91,9 @@ export default function SuffixEngine() {
           </div>
         </div>
 
-        {/* CONSTRUCTION RAIL */}
-        <div className="bg-white p-12 rounded-[3rem] shadow-2xl shadow-black/5 border border-white mb-12 relative overflow-hidden">
-          <div className="flex items-center gap-3 mb-8">
+{/* CONSTRUCTION RAIL - YENİLENEN KISIM */}
+        <div className="bg-white p-6 md:p-12 rounded-[2.5rem] md:rounded-[3rem] shadow-2xl shadow-black/5 border border-white mb-12 relative overflow-hidden">
+          <div className="flex items-center gap-3 mb-6 md:mb-8">
             <h3 className="text-[10px] font-black uppercase text-slate-300 tracking-[0.3em]">Word Construction</h3>
             <button onClick={() => { playClickSound(); setActiveSuffixes([]); }} className="ml-auto text-slate-300 hover:text-red-500 p-2 hover:bg-red-50 rounded-full transition-all">
               <Trash2 className="w-4 h-4" />
