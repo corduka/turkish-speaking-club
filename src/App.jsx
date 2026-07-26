@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import { FormProvider } from './context/FormContext';
 import FormModal from './components/FormModal'; 
 import ScrollToTop from './components/ScrollToTop';
+import WordWeaver from './components/WordWeaver'; // Bileşenin bulunduğu yol
 
 // Sayfalar
 import Home from './pages/Home';
@@ -25,6 +26,7 @@ import LogicLab from './pages/lab/LogicLab';
 import SentenceBuilder from './pages/lab/SentenceBuilder';
 import SuffixEngine from './pages/lab/SuffixEngine';
 import VerbEngine from './pages/lab/VerbEngine';
+import StoryBuilder from './pages/lab/StoryBuilder';
 
 function App() {
   return (
@@ -55,6 +57,8 @@ function App() {
               <Route path="/logic-lab/sentence-builder" element={<SentenceBuilder />} />
               <Route path="/logic-lab/suffix-engine" element={<SuffixEngine />} />
               <Route path="/logic-lab/verb-engine" element={<VerbEngine />} />
+              <Route path="/logic-lab/story-builder" element={<StoryBuilder />} /> {/*bunu daha sonra sil cunku acılmıyor*/}
+              <Route path="/word-weaver" element={<WordWeaver />} />
 
               {/* NOT FOUND - HER ZAMAN EN ALTTA OLMALI */}
               <Route path="*" element={<NotFound />} />
